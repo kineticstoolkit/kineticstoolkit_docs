@@ -97,7 +97,7 @@ project:
     pd_read_csv: "[pd.read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)"
     dataframe_to_csv: "[to_csv](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html)"
     ezc3d: "[ezc3d](https://github.com/pyomeca/ezc3d)"  
-    ktk_api_reference: "[API Reference]([API Reference](https://kineticstoolkit.uqam.ca/docs)"
+    ktk_api_reference: "[API Reference](https://kineticstoolkit.uqam.ca/docs/api)"
     ktk_timeseries: "[ktk.TimeSeries](https://kineticstoolkit.uqam.ca/docs/api/ktk.TimeSeries.html)"
     ktk_timeseries_add_data: "[add_data](https://kineticstoolkit.uqam.ca/docs/api/ktk.TimeSeries.add_data.html)"
     ktk_timeseries_add_event: "[add_event](https://kineticstoolkit.uqam.ca/docs/api/ktk.TimeSeries.add_event.html)"
