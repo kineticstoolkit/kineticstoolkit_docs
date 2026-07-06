@@ -16,7 +16,7 @@ kernelspec:
 In the previous section, we introduced two types of variables that express numbers: `int` and `float`. To express letters, words, and sentences, we use the `string` type. This section explains different methods to create strings, and how to combine strings and numbers.
 
 
-## Creating strings using quotes
+## Single and double quotes
 
 A string is created by enclosing characters between quotes. Python does not make a difference between single-quotes `'` and double-quotes `"`. Therefore, the following strings are equivalent:
 
@@ -89,7 +89,7 @@ print(some_string)
 
 Inserting a backslash `\` in a string tells Python that the following character is a special character. It may be used to enter quotes, line breaks or backslashes in a string.
 
-### Single-quote `\'` and double-quote `\"`
+### Single and double-quotes
 
 If a single string needs to include both apostrophes and double-quotes, then it is impossible to select a correct delimiter. Backslashing a quote character (`\'`, `\"`) tells Python that this really is a character, and not a delimiter. For instance:
 
@@ -106,7 +106,7 @@ print(example2)
 Newline characters are inserted using `\n`:
 
 ```{code-cell} ipython3
-example_string = "I ate your sandwich.\nIt was good."
+example_string = "I ate your sandwich.\nIt tasted good."
 
 print(example_string)
 ```
@@ -122,9 +122,9 @@ print(file_path)
 ```
 
 
-## Creating strings using triple-quotes
+## Triple-quotes
 
-Python provides another type of string delimiter: the triple-quote. All the content of a triple-quoted string is literal, with no backslash special character. This means that these strings can integrate both single and double quotes:
+Python provides another type of string delimiter: the triple-quote. Triple-quoted strings can integrate both single and double quotes:
 
 ```{code-cell}
 s1 = """I didn't write "E = mc2", that's Einstein's thing."""
@@ -132,21 +132,13 @@ s1 = """I didn't write "E = mc2", that's Einstein's thing."""
 print(s1)
 ```
 
-We don't need `\n` for line breaks, we simply do a literal line break.
+They also don't need `\n` for line breaks, we simply do literal line breaks.
 
 ```{code-cell} ipython3
 s2 = """I ate your sandwich.
-It was good."""
+It tasted good."""
 
 print(s2)
-```
-
-And we don't need to backslash the backslash character:
-
-```{code-cell} ipython3
-file_path = """C:\Windows\important_driver.dll"""
-
-print(file_path)
 ```
 
 The most common use for triple-quotes are docstrings, which will be seen later in [](5_python_functions.md).
@@ -200,7 +192,7 @@ print(long_string)
 ```
 
 
-## Including variable contents in strings using f-strings
+## Including variables in strings using f-strings
 
 We often use strings to report results:
 
@@ -208,7 +200,7 @@ We often use strings to report results:
 "The calculated ankle moment is 100.1 Nm."
 ```
 
-A good method to include the value of a variable into a string is to use an f-string, which gets its name from its `f` prefix. With f-strings, Python evaluates the result of any instruction placed between curly braces `{}`:
+A good method to include the value of a variable into a string is to use an f-string (for *formatted string*), which are defined by prefixing the string with the letter `f`. With f-strings, Python evaluates the result of any instruction placed between curly braces `{}`:
 
 ```{code-cell} ipython3
 ankle_moment = 100.1
