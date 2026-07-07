@@ -238,3 +238,27 @@ d = (x**2 + y**2) ** (1 / 2)  # square root of (x^2 + y^2)
 print(d)
 ```
 ::::
+
+## Constants
+
+We saw how to store values in memory using variables. In many programming languages, we both have memory space defined as variables (values that can change) and memory space defined as constants (values that could not change). In Python, there is no concept of a constant: constants are saved as variables, and we simply *agree* that it will not be modified. For example:
+
+
+```{code-cell} ipython3
+GRAVITATIONAL_CONSTANT = 9.81
+
+
+mass = 82  # kg
+acceleration = 1.6  # m/s2
+print(f"Ground reaction force = {mass * (acceleration + GRAVITATIONAL_CONSTANT)} N")
+```
+
+
+Note however that we use a **convention** to distinguish between variables (such as `mass` and `acceleration`) and constants (`GRAVITATIONAL_CONSTANT`): always use CAPITAL_CASE to define constants and lower_case to define standard variables.
+
+
+Regarding constants, we also recommend using these conventions:
+
+**No magic constants**: We could have simply written 9.81 in the print call above. Instead, we defined the gravity using a name, and we used that name in the equation. We generally want to avoid "magical" constants dispersed around the code: we call them "magical" because after time, we tend to not remember what these values are for, other than making the function work "magically". Using named constants is a good way to auto-document code.
+
+**Top of the file**: Define all the constants once and at a same obvious place, which is the top of the file.

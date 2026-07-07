@@ -15,27 +15,41 @@ kernelspec:
 
 In the previous sections, we learned how to create functions to execute groups of arithmetic operations, to store variables and to print results. These examples had only one possible flow of executions.
 
-This section shows how to build programs that are able to execute different instructions as a consequence of comparisons and conditions.
+This section shows how to build programs that execute different instructions as a consequence of comparisons and conditions.
 
 
 ## Boolean and comparisons
 
-Comparisons are performed using the operators `==`, `!=`, `>=`, `>`, `<=` and `<`, and always result in a variable of type boolean. We already know the following types of variable: `string`, `int`, `float` and `complex`. Boolean variables, `bool`, are the simplest: they can be either `True` or `False`.
+Comparisons are performed using these operators:
 
 ```python
-10 == 5  # False
-10 != 5  # True
-10 <= 5  # False
-10 >= 5  # True
-10 < 5   # False
-10 > 5   # True
+==  # is equal
+!=  # is not equal
+>=  # is greater or equal
+>   # is strictly greater
+<=  # is less or equal
+<   # is strictly less
+```
+
+They always result in a boolean variable. You already learned the following variable types: `string`, `int`, `float` and `complex`. Boolean variables, `bool`, are the simplest: they can be either `True` or `False`.
+
+```{code-cell} ipython3
+10 == 5
+```
+
+```{code-cell} ipython3
+10 != 5
+```
+
+```{code-cell} ipython3
+10 > 5
 ```
 
 Obviously, comparing a constant with another constant has little sense. However, comparing variables with constants, or variables with other variables, is very common:
 
 ```{code-cell} ipython3
 WORLD_RECORD = 240
-my_score = 236
+my_score = 52
 
 # Verify if I broke the world record
 my_score > WORLD_RECORD
@@ -57,20 +71,19 @@ a = 5
 which assigns the value of 5 to variable `a`.
 :::
 
-:::{tip}
-Boolean values can be used in arithmetical operations: their numerical value is 0 for False, and 1 for True. For instance:
 
-```
+## Arithmetics with boolean values
+
+When used in a calculation, `True` is represented by `1`, and `False` is represented by `0`:
+
+```{code-cell} ipython3
 14 * True + 2 * False
 ```
-
-14
-:::
 
 
 ## Conditional code
 
-Now that we know how to make comparisons, we can control the flow of the program as a result of these comparisons, using `if`:
+Now that you know how to make comparisons, you can control the flow of the program as a result of these comparisons, using `if`:
 
 ```
 if condition:
@@ -83,7 +96,7 @@ The `if` checks if a condition is met. The code block that follows the `if` stat
 
 ```{code-cell}
 WORLD_RECORD = 240
-my_score = 236
+my_score = 52
 
 # Verify if I broke the world record
 if my_score > WORLD_RECORD:
@@ -93,11 +106,11 @@ if my_score > WORLD_RECORD:
 
 This code did nothing, because the condition evaluated to `False`.
 
-Using the `else` keyword, it is possible to execute one action if the condition is `True` and another action if the condition is `False`:
+Using the `else` keyword, you can execute one action if the condition is `True` and another action if the condition is `False`:
 
 ```{code-cell}
 WORLD_RECORD = 240
-my_score = 236
+my_score = 52
 
 # Verify if I broke the world record
 if my_score > WORLD_RECORD:
@@ -108,11 +121,11 @@ else:
 
 ```
 
-It is also possible to evaluate different conditions in a same `if` series, using `elif`, which stands for "else if":
+You can also evaluate different conditions in a same `if` series, using `elif`, which stands for "else if":
 
 ```{code-cell}
 WORLD_RECORD = 240
-my_score = 236
+my_score = 52
 
 # Verify if I broke the world record
 if my_score > WORLD_RECORD:
@@ -126,11 +139,11 @@ else:
 
 ```
 
-There may be more than one `elif` in a same series of comparisons:
+There may be even more than one `elif` in a same series of comparisons:
 
 ```{code-cell}
 WORLD_RECORD = 240
-my_score = 236
+my_score = 52
 
 # Verify if I broke the world record
 if my_score > WORLD_RECORD:
@@ -154,8 +167,14 @@ We have three timing gates. We want to know if an athlete has accelerated, decel
 
 Write a function with the following signature and docstring:
 
-```
-def compare_speed(time1, time2, time3, distance12, distance23):
+```python
+def compare_speed(
+    time1: float,
+    time2: float,
+    time3: float,
+    distance12: float = 50.0,
+    distance23: float = 50.0,
+) -> str:
     """
     Check if an athlete accelerated or decelerated based on timing gates.
 
@@ -170,36 +189,38 @@ def compare_speed(time1, time2, time3, distance12, distance23):
 
     Returns
     -------
-    str
-        Returns "accelerated", "decelerated", or "kept constant" according
-        to the calculation.
+    "accelerated", "decelerated", or "kept constant" according to the
+    calculation.
 
     """
 ```
 
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell]
-
-
-def compare_speed(time1, time2, time3, distance12, distance23):
+def compare_speed(
+    time1: float,
+    time2: float,
+    time3: float,
+    distance12: float = 50.0,
+    distance23: float = 50.0,
+) -> str:
     """
     Check if an athlete accelerated or decelerated based on timing gates.
 
     Parameters
     ----------
-    time1, time2, time3 : float
+    time1, time2, time3
         Time at which the athlete passed through timing gate 1, 2, 3,
         in seconds.
-    distance12, distance23 : float
+    distance12, distance23
         Distance between timing gates 1 and 2; and between timing gates
-        2 and 3.
+        2 and 3. Default is 50.0.
 
     Returns
     -------
-    str
-        Returns "accelerated", "decelerated", or "kept constant" according
-        to the calculation.
+    "accelerated", "decelerated", or "kept constant" according to the
+    calculation.
 
     """
     speed1 = distance12 / (time2 - time1)
@@ -216,9 +237,9 @@ def compare_speed(time1, time2, time3, distance12, distance23):
 
 
 # Test the function:
-print(compare_speed(1.0, 2.0, 3.0, 50, 50))
-print(compare_speed(1.0, 2.0, 3.5, 50, 50))
-print(compare_speed(1.0, 2.0, 2.5, 50, 50))
+print(compare_speed(1.0, 2.0, 3.0))
+print(compare_speed(1.0, 2.0, 3.5))
+print(compare_speed(1.0, 2.0, 2.5))
 
 ```
 
@@ -226,30 +247,29 @@ print(compare_speed(1.0, 2.0, 2.5, 50, 50))
 
 ## Logical operators
 
-We learned above how to generate boolean values (True, False) using comparison operators such as `>` (greater than) or `<=` (less or equal to). We can create more complex comparisons by combining and inverting the results of many comparisons, using the logical operators `not`, `or` and `and` as shown in {numref}`fig_logical_operators`.
+You know how to generate boolean values (`True`, `False`) using comparison operators such as `>` (greater than) or `<=` (less or equal to). You can create more complex comparisons by combining and inverting the results of many comparisons, using the logical operators `not`, `or` and `and` as shown in {numref}`fig_logical_operators`.
 
-```{figure}
+```{figure} fig_logical_operators
 :label: fig_logical_operators
-:width: 3.5in
-![](_static/images/fig_logical_operators.png)
-
-Truth table of `not`, `or` and `and`.
+:width: 350px
+Truth table for `not`, `or` and `and`.
 ```
 
+This example shows these operators in action:
 
 ```{code-cell}
-def is_between(a, lower, upper):
-    """Returns True if a is strictly between lower and upper."""
-    return (a > lower) and (a < upper)
+def is_strictly_between(value: float, lower: float, upper: float):
+    """Returns True if value is strictly between lower and upper."""
+    return (value > lower) and (value < upper)
 
 
 # Test the function
-print(is_between(3, 2, 5))
-print(is_between(10, 2, 5))
-print(is_between(2, 2, 5))
+print(is_strictly_between(3, 2, 5))
+print(is_strictly_between(10, 2, 5))
+print(is_strictly_between(2, 2, 5))
 ```
 
-:::{tip} Naming functions that return bools
+:::{tip}
 For clarity, functions that return booleans often start with `is_`, `has_`, `contains_`, etc.
 :::
 
@@ -258,9 +278,8 @@ For clarity, functions that return booleans often start with `is_`, `has_`, `con
 
 Write a short code that checks the value of two integers named `dice1` and `dice2`, and that prints "You got double-six!", "You got one six!" or "You got no six." according to the dice values.
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell]
-
 # Assign some values to dice1 and dice2
 dice1 = 6
 dice2 = 4
@@ -272,4 +291,4 @@ elif (dice1 == 6) or (dice2 == 6):
 else:
     print("You got no six.")
 ```
-
+::::
