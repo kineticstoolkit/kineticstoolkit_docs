@@ -43,7 +43,7 @@ napoleon_use_rtype = True
 
 
 # -- HTML Options --------------------------------------------------------------
-html_theme = "sphinx_book_theme"
+html_theme = "pydata_sphinx_theme"
 html_baseurl = "https://kineticstoolkit.uqam.ca/docs/api"
 html_favicon = "_static/favicon.ico"
 html_static_path = ["_static"]
@@ -52,15 +52,13 @@ html_static_version = None  # To avoid putting ?v=... everywhere
 
 # Theme options for sphinx-book-theme (maps from jupyter-book config)
 html_theme_options = {
-    "repository_url": "https://github.com/kineticstoolkit/kineticstoolkit",
-    "use_repository_button": True,
-    "use_issues_button": True,
-    "collapse_navigation": True,
+    "collapse_navigation": False,
     "navigation_depth": 4,
     "show_toc_level": 1,
     "logo": {
         "image_light": "_static/logo.png",
         "image_dark": "_static/logo-dark.png",
+        "link": "https://kineticstoolkit.uqam.ca",
     },
 }
 

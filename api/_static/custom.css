@@ -1,3 +1,9 @@
 .bd-sidebar-secondary { display: none !important; }
 .bd-main { width: 100% !important; margin-right: 0; padding-right: 0; }
 .bd-sidebar-primary {flex-basis: 27%;}
+
+/* Remove external-link symbol for links in this domain */
+a[href^="https://kineticstoolkit.uqam.ca/"]::after,
+a[href^="https://kineticstoolkit.uqam.ca/"]::before {
+  content: none !important;
+}
