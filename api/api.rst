@@ -3,19 +3,8 @@ Kinetics Toolkit API
 
 This is the complete documentation for the `kineticstoolkit` python package API.
 
+To get started, please consult the `reference book`_.
 
-Getting Started
----------------
-
-- `Reference Book`_
-- Installing from conda:
-    ``conda install -c conda-forge kineticstoolkit``
-- Installing from pip:
-    ``pip install kineticstoolkit``
-- Importing:
-    ``import kineticstoolkit as ktk``
-- Importing with cosmetic goodies:
-    ``import kineticstoolkit.lab as ktk``
 
 
 Contents
@@ -24,8 +13,9 @@ Contents
 .. toctree::
    :maxdepth: 2
    
+   install_import
    classes
    functions
    modules
 
-.. _Reference Book: https://kineticstoolkit.uqam.ca/docs/book
+.. _reference book: https://kineticstoolkit.uqam.ca/docs/book

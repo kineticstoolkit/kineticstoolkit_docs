@@ -1,7 +1,7 @@
 Kinetics Toolkit API
 ====================
 
-API is `here`_
+This file is overwritten and serves only to generate the top menubar.
 
 .. toctree::
    :hidden:

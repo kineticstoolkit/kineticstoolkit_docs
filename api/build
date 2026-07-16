@@ -1,0 +1,6 @@
+./clean
+sphinx-build . _build/html
+cd _build/html
+rm index.html
+cp api.html index.html
+
