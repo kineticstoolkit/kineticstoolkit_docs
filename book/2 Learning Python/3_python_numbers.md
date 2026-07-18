@@ -25,18 +25,19 @@ Numbers belong to different sets, each fulfilling a different role. Python provi
 The three sets of numbers in Python.
 ```
 
-In this book, we will focus only on integers (`int`) and real numbers (`float`).
+This book focus only on integers and real numbers (floats).
 
 
-## Integers and floats
+## Integers (`int`)
 
 
-**Integers** are generally used to represent ranks, indexes, counts:
+Integers are generally used to represent ranks, indexes, counts:
 
 - An index in a list (e.g, 5th value of a list)
 - A number of repetitions
 - A number of events
-- The size of a matrix
+- The size of a vector
+- The length of a list
 - etc.
 
 Any number that does not contain a decimal point is considered an `int` by Python:
@@ -46,7 +47,9 @@ some_int = 3
 ```
 
 
-**Floats** are generally used to represent real, physical values:
+## Floats (`float`)
+
+Floats are generally used to represent real, physical values:
 
 - A force in newtons
 - A distance in meters
@@ -77,7 +80,7 @@ print(isinstance(some_int, float))  # Is it a float?
 
 ## Converting between integers and floats
 
-Use `float()` to convert a value, including an integer, to a `float`:
+Use `float()` to convert a value to a float:
 
 ```{code-cell} ipython3
 some_int = 3
@@ -85,7 +88,7 @@ some_int = 3
 float(some_int)
 ```
 
-Use `int()` to convert a value, including a float, to an `int`. Note however that the decimal component of the number will be lost:
+Use `int()` to convert a value to an integer. Note however that the decimal component of the number will be lost:
 
 ```{code-cell} ipython3
 some_float = 3.1416

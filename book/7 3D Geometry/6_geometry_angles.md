@@ -264,7 +264,7 @@ These papers propose standard ways to:
 1. define most body segments' local coordinate systems based on bony landmarks;
 2. define rotation sequences from a proximal segment to a distal segment to express joint angles.
 
-Later in section [](../8%20Performing%203D%20Movement%20Analyses/3_kinematics_joint_angles.md), we will use the different Kinetics Toolkit functions introduced in this section to calculate joint angles from skin markers by following these recommendations.
+Later in section [](../8%20Analyzing%203D%20Movement/3_kinematics_joint_angles.md), we will use the different Kinetics Toolkit functions introduced in this section to calculate joint angles from skin markers by following these recommendations.
 
 In any case, and as a main message for this section, we insist on the importance of communicating how angles were calculated in any scientific communication, since these angles are often highly variable between different conventions.
 

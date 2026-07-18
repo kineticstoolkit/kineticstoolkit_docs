@@ -57,7 +57,7 @@ Each data key of the Points TimeSeries corresponds to one point (marker):
 c3d_contents["Points"].data
 ```
 
-We will learn how to visualize these markers using an interactive player in [](../8%20Performing%203D%20Movement%20Analyses/1_player.md). For now, let's plot some of them:
+We will learn how to visualize these markers using an interactive player in [](../8%20Analyzing%203D%20Movement/1_player.md). For now, let's plot some of them:
 
 ```{code-cell} ipython3
 c3d_contents["Points"].plot(["c7", "r should"])
@@ -98,7 +98,7 @@ c3d_contents["ForcePlatforms"].plot('FP0_COP')
 
 ### Quick visualization
 
-Although visualizing data using the interactive 3D {{ktk_player}} is explained in section [](../8%20Performing%203D%20Movement%20Analyses/1_player.md), here is how we can quickly visualize the kinematic and kinetic data in this file. Note that every TimeSeries provided to the Player must have the same sampling rate, which means we need to downsample the force platform data to the points sampling rate:
+Although visualizing data using the interactive 3D {{ktk_player}} is explained in section [](../8%20Analyzing%203D%20Movement/1_player.md), here is how we can quickly visualize the kinematic and kinetic data in this file. Note that every TimeSeries provided to the Player must have the same sampling rate, which means we need to downsample the force platform data to the points sampling rate:
 
 ```{code-cell} ipython3
 :tags: [skip-execution]

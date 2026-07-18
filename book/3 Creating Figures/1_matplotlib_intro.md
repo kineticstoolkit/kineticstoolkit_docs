@@ -41,7 +41,7 @@ Matplotlib can generate a wide variety of plots. Here are different examples tha
 |:-------------------------------------------:|:--------------------------------------:|
 | ![](../../_static/images/matplotlib_errorbar.jpg) | ![](../../_static/images/matplotlib_bar.jpg) |
 
-This chapter focuses solely on line plots using {{plt_plot}}. However, after learning this type of plot and [](../4%20Manipulating%20Arrays%20with%20Numpy/1_numpy_intro.md), any other type of plot will become relatively easy to draw just by reading their documentation.
+This chapter focuses solely on line plots using {{plt_plot}}. However, after learning this type of plot and [](../4%20Manipulating%20Arrays/1_numpy_intro.md), any other type of plot will become relatively easy to draw just by reading their documentation.
 
 
 ## Importing **pyplot**

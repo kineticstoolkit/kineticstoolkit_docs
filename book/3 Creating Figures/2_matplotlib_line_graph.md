@@ -1,6 +1,6 @@
 # Plotting a line graph
 
-The most common command of Matplotlib's pyplot module is probably {{plt_plot}}. This function plots one or many series expressed either as [standard Python lists](../2%20Learning%20Python/7_python_lists.md), as [NumPy Arrays](../4%20Manipulating%20Arrays%20with%20Numpy/2_numpy_ndarray.md), or as `Pandas DataFrames`. For one-dimensional data, it takes one list (y) or two lists (x, y) as arguments.
+The most common command of Matplotlib's pyplot module is probably {{plt_plot}}. This function plots one or many series expressed either as [standard Python lists](../2%20Learning%20Python/7_python_lists.md), as [NumPy Arrays](../4%20Manipulating%20Arrays/2_numpy_ndarray.md), or as `Pandas DataFrames`. For one-dimensional data, it takes one list (y) or two lists (x, y) as arguments.
 
 For example, to plot this list: `[1.0, 2.0, -1.0, -0.0]`:
 

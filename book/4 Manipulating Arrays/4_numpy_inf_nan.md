@@ -11,10 +11,7 @@ kernelspec:
   name: python3
 ---
 
-
-
-
-# Infinity and Not-A-Number (nan)
+# Infinity and Not-A-Number (`nan`)
 
 Some arithmetic operations, such as division by zero, lead to infinity or undertermined numbers, which normally result in an error:
 

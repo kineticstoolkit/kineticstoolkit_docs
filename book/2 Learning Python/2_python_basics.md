@@ -19,7 +19,7 @@ This section covers the very basics of Python: how to perform arithmetic operati
 
 ## Arithmetic operations
 
-Any arithmetic operation is performed simply by writing its equation. For example, the most common arithmetic operators are `+`, `-`, `*`, `/` and `**` (exponent). We use parentheses `()` to indicate operation priority.
+Any arithmetic operation is performed simply by writing its equation using arithmetic operators such as `+`, `-`, `*`, `/` and `**` (exponent), and parentheses `()` to indicate operation priority.
 
 ```python
 # Addition
@@ -104,7 +104,7 @@ works.
 
 Programs with only a few lines of code are generally easy to understand. As they grow in complexity, we need to document them, usually with comments.
 
-Any text that follows `#` is a comment, and it is not executed by Python. Usually, we use comments to explain the objective of a section of code. Here are two examples of completely equivalent code, with the second using comments.
+Any text that follows `#` is a comment and is not executed by Python. Usually, we use comments to explain the objective of a section of code. Here are two examples of completely equivalent code, with the second using comments.
 
 **Without comments**
 
@@ -126,14 +126,14 @@ print(10 + 5)  # Print the result of an addition
 
 ## Variables
 
-Variables are memory space used to store values. For example, we could create two variables, `a` and `b`, that both store a different number:
+Variables are memory space to store values. For example, here are two variables, `a` and `b`, that store numbers:
 
 ```{code-cell} ipython3
 a = 4
 b = 3
 ```
 
-Any reference to a variable is replaced by its value:
+Referencing a variable reads its value:
 
 ```{code-cell} ipython3
 a + 1  # Since a = 4, Python calculates 4 + 1
@@ -160,9 +160,7 @@ c
 ```
 
 :::{tip}
-The example above can be written in a shorter form using the increment `+=` operator. This notation is very common and may help avoid typographic errors in more complex statements.
-
-These shorthands exist for every arithmetical operation:
+The example above can be written in a shorter form using the increment `+=` operator. Such shorthand exists for every arithmetical operation:
 
 ```python
 a += b      # equivalent to a = a + b
@@ -241,21 +239,19 @@ print(d)
 
 ## Constants
 
-We saw how to store values in memory using variables. In many programming languages, we both have memory space defined as variables (values that can change) and memory space defined as constants (values that could not change). In Python, there is no concept of a constant: constants are saved as variables, and we simply *agree* that it will not be modified. For example:
+Although many programming languages have different constructs for variables (values that can change) and constants (values that could not change), Python does not include the concept of a constant. Constants are saved as variables, and we simply *agree* that we will not modify them by using a **convention**:
+- use `CAPITAL_CASE` for constants;
+- use `lower_case` for standard variables.
 
+For example:
 
 ```{code-cell} ipython3
 GRAVITATIONAL_CONSTANT = 9.81
-
 
 mass = 82  # kg
 acceleration = 1.6  # m/s2
 print(f"Ground reaction force = {mass * (acceleration + GRAVITATIONAL_CONSTANT)} N")
 ```
-
-
-Note however that we use a **convention** to distinguish between variables (such as `mass` and `acceleration`) and constants (`GRAVITATIONAL_CONSTANT`): always use CAPITAL_CASE to define constants and lower_case to define standard variables.
-
 
 Regarding constants, we also recommend using these conventions:
 

@@ -25,7 +25,7 @@ Before calculating kinematics, we will learn how to use the {{ktk_player}} to vi
 The Player is an interactive class that needs an interactive Matplotlib backend. See section [](../../1%20Getting%20Started/2_getting_started_installing.md) for more information.
 :::
 
-In this section, we will use kinematic data of [tennis serves](../../5%20Appendix/dataset_kinematics_tennis_serve.md) as a [TimeSeries](../5%20Manipulating%20Time%20Series%20with%20Kinetics%20Toolkit/2_timeseries.md) of marker positions.
+In this section, we will use kinematic data of [tennis serves](../../5%20Appendix/dataset_kinematics_tennis_serve.md) as a [TimeSeries](../5%20Manipulating%20TimeSeries/2_timeseries.md) of marker positions.
 
 ```{code-cell} ipython3
 %matplotlib agg

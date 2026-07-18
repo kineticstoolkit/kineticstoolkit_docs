@@ -73,6 +73,7 @@ Good function names start with an active verb that tells what action is performe
 ```python
 calculate_mean(arg1)  # <-- Good
 filter_signal(arg1)   # <-- Good
+filtersignal(arg1)    # <-- Bad, separate both words with an underscore
 signal(arg1)          # <-- Bad, unless we talk about the _verb_ signaling
 color(arg1)           # <-- Bad
 ```
@@ -101,7 +102,7 @@ def print_sum(first, second):
 ```
 
 
-It is in fact important to use clear names for function arguments, as it tells the user of the function how to use it. Argument names are selected using the same best practices as standard variable (see [](2_python_basics.md)).
+It is important to use clear names for function arguments, as it tells the user of the function how to use it. Argument names are selected using the same best practices as standard variable (see [](2_python_basics.md)).
 
 
 ## 💪 Exercise 1
@@ -231,11 +232,11 @@ print(format_info(1, "Catherina", "Smith", 20, 1.5, 50.2))
 
 Although the given solutions to the previous exercises do work, they could be much more documented. Keep in mind that code is written once, often by only one programmer, but it is read many times after, often by other people. An undocumented function is usually clear to the programmer while it is being written, but will it be months later, by other people?
 
-Docstrings are the most important way to document functions. A docstring is  a **string** that **doc**uments a function. While being optional, it is helpful in any code other than very simple scripts. A standard docstring is a [triple-quote string](python_strings_triple_quotes.md) placed just below the function signature. Minimally, a docstring clearly indicates:
+Docstrings are the most important way to document functions. A docstring is  a **string** that **doc**uments a function. While being optional, it is helpful in any code other than very simple scripts. A standard docstring is a tripled-quote string placed just below the function signature. Minimally, a docstring indicates:
 
 1. What the function does;
-2. What are the types and contents of every expected parameter;
-3. What are the type and contents of the return value, if any.
+2. What are the expected parameter, if any;
+3. What are is the return value, if any.
 
 Here is what a good docstring looks like.
 
@@ -283,7 +284,7 @@ As you notice in the example above, there are more lines of documentation than l
 
 Since they are so ubiquitous, docstrings can be read without having to open the function's source code. Try executing the last function definition, then:
 
-- Type `format_info` in Spyder's help browser. The docstring appears, all well-formatted, as pictured in {numref}`fig_python_function_spyder_help`.
+- Type `format_info` in Spyder's help browser. The docstring appears, all well-formatted, as pictured in [](fig_python_function_spyder_help).
 
 ```{figure} fig_python_function_spyder_help
 :label: fig_python_function_spyder_help
@@ -300,7 +301,7 @@ help(format_info)
 
 ## Type annotations
 
-In addition to docstrings, type annotations (also called type hints) are a very good way to document the types of a function's parameters and return value, because they are part of the function's signature instead of the docstring. They use `:` to document the expected types of the arguments, and `->` to document the type of the return value (see the `->` as a right-arrow):
+In addition to docstrings, type annotations (also called type hints) are an excellent way to document the types of a function's parameters and return value, because they are part of the function's signature instead of the docstring. They use `:` to document the expected types of the parameters, and `->` to document the type of the return value (see the `->` as a right-arrow):
 
 ```python
 def format_info(
@@ -337,6 +338,12 @@ def format_info(
     """
 ```
 
+For a function that returns nothing, we use `None` as the returned type, which is a special variable that means "Nothing":
+
+```python
+def save_list(filename: str, data: list[float]) -> None:
+    ...
+```
 
 ## Positional and keyword arguments
 
@@ -367,7 +374,7 @@ Note that keyword arguments can be assigned in any order:
 print_full_name(last_name="Smith", first_name="Catherina")
 ```
 
-For very simple functions, using keyword arguments is not that useful. However, some functions may have lots of arguments, with many of them being optional. For example, let's look at the signature of Pandas' {{pd_read_csv}} function (we will use Pandas later), in  {numref}`fig_pandas_read_csv_signature`.
+For very simple functions, using keyword arguments is not that useful. However, some functions may have lots of arguments, with many of them being optional. For example, let's look at the signature of Pandas' {{pd_read_csv}} function (we will use Pandas later), in [](fig_pandas_read_csv_signature).
 
 ````{figure} fig_pandas_read_csv_signature
 :label: fig_pandas_read_csv_signature
@@ -395,7 +402,7 @@ In some function signatures, you may sometimes see these symbols: `/` and `*`.
 
 ## Default values
 
-In {{pd_read_csv}}, the only mandatory argument is `filepath_or_buffer`, which is the name of the csv file ({numref}`fig_pandas_read_csv_signature`). Every other argument has a default value, and exists only to modify the default behaviour of the function.
+In {{pd_read_csv}}, the only mandatory argument is `filepath_or_buffer`, which is the name of the csv file ([](fig_pandas_read_csv_signature)). Every other argument has a default value, and exists only to modify the default behaviour of the function.
 
 Let's examine this concept with a simpler function. We define the following function that calculates the ground reaction force based on the acceleration and mass of a person's center of mass:
 
@@ -516,10 +523,10 @@ print(
 
 ## 💪 Exercise 4
 
-A sprinter runs through two timing gates spaced by 50 m as shown in {numref}`fig_exercise_timing_gates`. Each timing gate records the time (in seconds) when the sprinter passes through it.
+A sprinter runs through two timing gates spaced by 50 m as shown in [](fig_exercise_timing_gates_functions). Each timing gate records the time (in seconds) when the sprinter passes through it.
 
 :::{figure} fig_exercise_timing_gates
-:label: fig_exercise_timing_gates
+:label: fig_exercise_timing_gates_functions
 :width: 400px
 Two timing gates separated by 50 meters.
 :::

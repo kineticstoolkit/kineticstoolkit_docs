@@ -212,7 +212,7 @@ plt.tight_layout();
 ## Filtering unidimensional arrays
 
 :::{important}
-This section is about manipulating NumPy arrays, and more precisely about selecting specific indexes in an array using a mask of booleans or integers. This is not about filtering a time series using a moving average or Butterworth filter, which will be seen later in section [](../5%20Manipulating%20Time%20Series%20with%20Kinetics%20Toolkit/8_filters.md).
+This section is about manipulating NumPy arrays, and more precisely about selecting specific indexes in an array using a mask of booleans or integers. This is not about filtering a time series using a moving average or Butterworth filter, which will be seen later in section [](../5%20Manipulating%20TimeSeries/8_filters.md).
 :::
 
 We learned how to access **one data** using indexing, and **multiple regularly-spaced data** using slicing. To read **multiple non-regularly-spaced data**, we use filtering. We call it filtering because we selectively filter out some data using a mask.

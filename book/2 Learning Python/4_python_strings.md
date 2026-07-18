@@ -13,7 +13,7 @@ kernelspec:
 
 # Strings
 
-In the previous section, we introduced two types of variables that express numbers: `int` and `float`. To express letters, words, and sentences, we use the `string` type. This section explains different methods to create strings, and how to combine strings and numbers.
+Strings are used to express letters, words and sentences. This section presents different methods to create strings, and how to combine strings and numbers.
 
 
 ## Single and double quotes
@@ -87,7 +87,7 @@ print(some_string)
 
 ## Backslash
 
-Inserting a backslash `\` in a string tells Python that the following character is a special character. It may be used to enter quotes, line breaks or backslashes in a string.
+Inserting a backslash `\` in a string tells Python that the following character is a special character. It may be used to enter quotes, line breaks, tabs or backslashes in a string.
 
 ### Single and double-quotes
 
@@ -110,6 +110,19 @@ example_string = "I ate your sandwich.\nIt tasted good."
 
 print(example_string)
 ```
+
+### Tab: `\t`
+
+Tab characters are inserted using `\t`:
+
+```{code-cell} ipython3
+header = "Fx (N)\tFy (N)\tFz (N)"
+values = "10.1\t15.0\t0.4"
+
+print(header)
+print(values)
+```
+
 
 ### Backslash: `\\`
 
@@ -226,7 +239,7 @@ print(f"The calculated ankle moment is {ankle_moment:.5f} Nm.")
 Using this variable:
 
 ```{code-cell}
-force = 150
+force = 150.0
 ```
 
 write a line of code that creates the variable `some_string` so that:
@@ -238,7 +251,7 @@ print(some_string)
 gives:
 
 ```
-Measured force: 150 N
+Measured force: 150.0 N
 ```
 
 ::::{dropdown} Solution
@@ -254,8 +267,8 @@ print(some_string)
 Using these two variables:
 
 ```{code-cell}
-force = 150
-moment = 34
+force = 150.0
+moment = 34.0
 ```
 
 write a line of code that creates the variable `some_string` so that:
@@ -267,8 +280,8 @@ print(some_string)
 gives:
 
 ```
-Measured force: 150 N
-Measured moment: 34 Nm
+Measured force: 150.0 N
+Measured moment: 34.0 Nm
 ```
 
 ::::{dropdown} Solution
@@ -284,8 +297,8 @@ print(some_string)
 Using these two variables:
 
 ```{code-cell}
-force = 150
-moment = 34
+force = 150.0
+moment = 34.0
 ```
 
 write a line of code that creates the variable `some_string` so that:
@@ -297,7 +310,7 @@ print(some_string)
 gives:
 
 ```
-We calculated a total force of 150 newton, while the calculated moment was 34 newton-meter.
+We calculated a total force of 150.0 newton, while the calculated moment was 34.0 newton-meter.
 ```
 
 and limit the width of your code lines to 80 characters.
@@ -317,24 +330,24 @@ print(some_string)
 
 We can create strings interactively from user input:
 
-```
+```python
 the_string = input()
 ```
 
-This allows the user to type some text right in the console. We can also provide some indication to the user:
+This allows the user to type some text right in the console. To provide some indication to the user:
 
-```
+```python
 the_string = input("Please enter your name: ")
 ```
 
-Note that the input function always creates a string. If you want the user to input a float, then you need to convert the string to a float:
+Note that the input function always creates a string. To input a float instead of a string, you need to convert the string to a float:
 
-```
+```python
 height = float(input("What is the participant's height in meters? "))
 ```
 
-Or if we need the user to enter an integer:
+The same applies to input an integer instead of a string:
 
-```
+```python
 i_cycle = int(input("Which gait cycle do we keep? "))
 ```

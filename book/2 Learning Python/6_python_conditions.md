@@ -81,11 +81,11 @@ When used in a calculation, `True` is represented by `1`, and `False` is represe
 ```
 
 
-## Conditional code
+## Conditional code (`if`, `elif`, `else`)
 
 Now that you know how to make comparisons, you can control the flow of the program as a result of these comparisons, using `if`:
 
-```
+```python
 if condition:
     perform_task1()
     perform_task2()
@@ -242,12 +242,58 @@ print(compare_speed(1.0, 2.0, 3.5))
 print(compare_speed(1.0, 2.0, 2.5))
 
 ```
+::::
 
+
+## Repeating code (`while`)
+
+The `while` instruction repeats a code block as long as a condition is true. Its syntax is:
+
+```python
+while condition:
+    instruction1()
+    instruction2()
+    instruction3()
+    ...
+```
+
+where `condition` is a boolean variable. Each repetition of a code block is called an *iteration*.
+
+Here is an example with five iterations of a code block:
+
+```{code-cell}
+i = 0
+
+while i < 5:
+    print(f"Now, the variable i is {i}.")
+    i += 1
+
+print("done")
+```
+
+We see that as long as `i` was strictly lower than 5, the `while` instruction executed the code block. When `i` equaled 5, the `(i < 5)` condition evaluated to False, and therefore the `while` instruction stopped executing the code block.
+
+In data processing, we often repeat the same code over a long series of values. Using `while` is one way to loop over multiple values, and we will see many others in section [](9_python_looping.md), after learning Python's most useful data containers which are the lists, tuples, and dictionaries.
+
+
+## 💪 Exercise 2
+
+Write a short code that prints every square number (e.g., 1, 4, 9, 16) that is lower than 99.
+
+::::{dropdown} Solution
+```{code-cell} ipython3
+root = 1
+while root ** 2 < 99:
+    print(root ** 2)
+    root += 1
+```
+::::
 
 
 ## Logical operators
 
-You know how to generate boolean values (`True`, `False`) using comparison operators such as `>` (greater than) or `<=` (less or equal to). You can create more complex comparisons by combining and inverting the results of many comparisons, using the logical operators `not`, `or` and `and` as shown in {numref}`fig_logical_operators`.
+You know how to generate boolean values (`True`, `False`) using comparison operators such as `>` (greater than) or `<=` (less or equal to). You can create more complex comparisons by combining and inverting the results of many comparisons, using the logical operators `not`, `or` and `and` as shown in [](fig_logical_operators).
+
 
 ```{figure} fig_logical_operators
 :label: fig_logical_operators
@@ -274,7 +320,7 @@ For clarity, functions that return booleans often start with `is_`, `has_`, `con
 :::
 
 
-## 💪 Exercise 2
+## 💪 Exercise 3
 
 Write a short code that checks the value of two integers named `dice1` and `dice2`, and that prints "You got double-six!", "You got one six!" or "You got no six." according to the dice values.
 

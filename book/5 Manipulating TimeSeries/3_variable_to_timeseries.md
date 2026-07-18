@@ -21,7 +21,7 @@ import numpy as np
 import pandas as pd
 ```
 
-Any [list](../2%20Learning%20Python/7_python_lists.md), [NumPy array](../4%20Manipulating%20Arrays%20with%20Numpy/2_numpy_ndarray.md), Pandas {{pd_series}} or Pandas {{pd_dataframe}} can be converted to a TimeSeries.
+Any [list](../2%20Learning%20Python/7_python_lists.md), [NumPy array](../4%20Manipulating%20Arrays/2_numpy_ndarray.md), Pandas {{pd_series}} or Pandas {{pd_dataframe}} can be converted to a TimeSeries.
 
 
 ## Numpy Array ↔︎ TimeSeries
