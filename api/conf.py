@@ -57,7 +57,7 @@ html_theme_options = {
     "show_toc_level": 1,
     "logo": {
         "image_light": "_static/logo.png",
-        "image_dark": "_static/logo-dark.png",
+        "image_dark": "_static/logo.png",
         "link": "https://kineticstoolkit.uqam.ca",
     },
 }

@@ -211,6 +211,7 @@ site:
     folders: true
     style: _static/css/custom.css
     logo: _static/logo.png
+    logo_dark: _static/logo.png
     favicon: favicon.ico
     internal_domains: kineticstoolkit.uqam.ca
   parts:

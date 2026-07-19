@@ -42,6 +42,7 @@ site:
     hide_search: true
     folders: true
     logo: logo.png
+    logo_dark: logo.png
     favicon: favicon.ico
     internal_domains: kineticstoolkit.uqam.ca
   parts:
