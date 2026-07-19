@@ -3,6 +3,7 @@
 version: 1
 project:
   title: Biomechanical Analysis using Python and Kinetics Toolkit
+  subject: Reference Book
   copyright: Félix Chénier, 2020-2026
   github: kineticstoolkit/kineticstoolkit_docs
   exclude:
@@ -194,7 +195,7 @@ project:
     ktk_kinematics_create_cluster: "[ktk.kinematics.create_cluster](https://kineticstoolkit.uqam.ca/docs/api/ktk.kinematics.create_cluster.html)"
     ktk_kinematics_extend_cluster: "[ktk.kinematics.extend_cluster](https://kineticstoolkit.uqam.ca/docs/api/ktk.kinematics.extend_cluster.html)"
     ktk_kinematics_track_cluster: "[ktk.kinematics.track_cluster](https://kineticstoolkit.uqam.ca/docs/api/ktk.kinematics.track_cluster.html)"
-  
+
 site:
   nav:
     - title: Home
@@ -208,7 +209,7 @@ site:
   options:
     analytics_google: ''
     hide_authors: true
-    folders: true
+    folders: false
     style: _static/css/custom.css
     logo: _static/logo.png
     logo_dark: _static/logo.png
