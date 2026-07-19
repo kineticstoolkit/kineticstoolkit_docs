@@ -56,6 +56,6 @@ jobs:
         echo "$SCP_KEY" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
         SSH_OPTS="-o StrictHostKeyChecking=accept-new"
-        scp -r $SSH_OPTS -P $SCP_PORT home/_build/html $SCP_USER@$SCP_HOST:/home/kinetics/docs_build/home
-        scp -r $SSH_OPTS -P $SCP_PORT api/_build/html $SCP_USER@$SCP_HOST:/home/kinetics/docs_build/api
-        scp -r $SSH_OPTS -P $SCP_PORT book/_build/html $SCP_USER@$SCP_HOST:/home/kinetics/docs_build/book
+        rsync -a -e "ssh $SSH_OPTS -p $SCP_PORT" home/_build/html $SCP_USER@$SCP_HOST:/home/kinetics/docs_build/home
+        rsync -a -e "ssh $SSH_OPTS -p $SCP_PORT" api/_build/html $SCP_USER@$SCP_HOST:/home/kinetics/docs_build/api
+        rsync -a -e "ssh $SSH_OPTS -p $SCP_PORT" book/_build/html $SCP_USER@$SCP_HOST:/home/kinetics/docs_build/book
