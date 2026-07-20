@@ -47,4 +47,3 @@ site:
     internal_domains: kineticstoolkit.uqam.ca
   parts:
     banner: banner.md
-    primary_sidebar_footer: primary-sidebar-footer.md
