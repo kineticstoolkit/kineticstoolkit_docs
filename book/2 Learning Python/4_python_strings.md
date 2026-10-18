@@ -213,7 +213,7 @@ We often use strings to report results:
 "The calculated ankle moment is 100.1 Nm."
 ```
 
-A good method to include the value of a variable into a string is to use an f-string (for *formatted string*), which are defined by prefixing the string with the letter `f`. With f-strings, Python evaluates the result of any instruction placed between curly braces `{}`:
+A very practical method to include the value of a variable into a string is to use an f-string (for *formatted string*), which are defined by prefixing the string with the letter `f`. With f-strings, Python evaluates the result of any instruction placed between curly braces `{}`:
 
 ```{code-cell} ipython3
 ankle_moment = 100.1
@@ -233,6 +233,19 @@ print(f"The calculated ankle moment is {ankle_moment:.2f} Nm.")
 print(f"The calculated ankle moment is {ankle_moment:.5f} Nm.")
 ```
 
+## Concatenating strings
+
+We can also construct strings in multiple steps, by appending new parts to it using the `+` operator:
+
+```{code-cell}
+the_string = "The calculated ankle moment is "
+the_string += str(ankle_moment)
+the_string += " Nm."
+
+print(the_string)
+```
+
+Note that we used the `str` keyword to convert a number to a string.
 
 ## 💪 Exercise 4
 

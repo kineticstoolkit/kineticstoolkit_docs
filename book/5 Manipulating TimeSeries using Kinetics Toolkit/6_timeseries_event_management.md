@@ -134,7 +134,7 @@ ts.plot()
 Finally, it is possible to edit the events interactively, using {{ktk_timeseries_ui_edit_events}}. This allows to add, remove and move events by clicking on a figure.
 
 :::{note}
-Matplotlib must be interactive. See section [](../../1%20Getting%20Started/3_getting_started_configuring_spyder.md) do help.
+Matplotlib must be interactive. See section [](../1%20Getting%20Started/3_getting_started_installing_spyder.md) do help.
 :::
 
 ```

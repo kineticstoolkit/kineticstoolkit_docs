@@ -19,7 +19,7 @@ This section covers the very basics of Python: how to perform arithmetic operati
 
 ## Arithmetic operations
 
-Any arithmetic operation is performed simply by writing its equation using arithmetic operators such as `+`, `-`, `*`, `/` and `**` (exponent), and parentheses `()` to indicate operation priority.
+Any arithmetic operation is done by writing its equation using arithmetic operators such as `+`, `-`, `*`, `/`, `**` (exponent), and parentheses `()` to indicate operation priority.
 
 ```python
 # Addition
@@ -104,23 +104,13 @@ works.
 
 Programs with only a few lines of code are generally easy to understand. As they grow in complexity, we need to document them, usually with comments.
 
-Any text that follows `#` is a comment and is not executed by Python. Usually, we use comments to explain the objective of a section of code. Here are two examples of completely equivalent code, with the second using comments.
-
-**Without comments**
-
-```{code-cell}
-print("Here is a calculation")
-print(10 + 5)
-```
-
-
-**With comments**
+Any text that follows `#` is a comment and is not executed by Python. Usually, we use comments to explain the objective of a section of code. Although the following example is so simple that comments are not really needed, it shows how to add comments:
 
 ```{code-cell} ipython3
 # Demonstrate comments
 
-print("Here is a calculation")  # Print some text
-print(10 + 5)  # Print the result of an addition
+print("The sum of 10 and 5 is:")  # Print the text
+print(10 + 5)  # Print the result
 ```
 
 
@@ -210,7 +200,9 @@ Continue this program so that it calculates and prints the mean velocity of the 
 
 ::::{dropdown} Solution
 ```{code-cell} ipython3
-print(distance_gates12 / (time_gate2 - time_gate1))
+velocity = distance_gates12 / (time_gate2 - time_gate1)
+
+print(velocity)
 ```
 ::::
 
@@ -239,7 +231,7 @@ print(d)
 
 ## Constants
 
-Although many programming languages have different constructs for variables (values that can change) and constants (values that could not change), Python does not include the concept of a constant. Constants are saved as variables, and we simply *agree* that we will not modify them by using a **convention**:
+Although many programming languages have different constructs for variables (values that can change) and constants (values that could not change), Python does not include the concept of a constant. Constants are saved as variables, and we simply *agree* that we will not modify them by using a convention:
 - use `CAPITAL_CASE` for constants;
 - use `lower_case` for standard variables.
 
@@ -250,7 +242,8 @@ GRAVITATIONAL_CONSTANT = 9.81
 
 mass = 82  # kg
 acceleration = 1.6  # m/s2
-print(f"Ground reaction force = {mass * (acceleration + GRAVITATIONAL_CONSTANT)} N")
+print("Ground reaction force (in newtons) = ")
+print(mass * (acceleration + GRAVITATIONAL_CONSTANT))
 ```
 
 Regarding constants, we also recommend using these conventions:

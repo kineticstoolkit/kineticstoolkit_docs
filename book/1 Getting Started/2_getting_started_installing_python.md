@@ -3,12 +3,11 @@
 This section shows you how to install Python, its main scientific packages such as NumPy, Matplotlib, and the Kinetics Toolkit package.
 
 
-## Step 1 - Install a conda distribution[^pip]
+## Step 1 - Install a conda distribution[^1]
 
 Download and install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Miniforge](https://conda-forge.org/download).
 
-[^pip]: All packages can be installed using pip using `pip install kineticstoolkit`. However, we recommend using Conda because it facilitates the management of virtual environments and integrates easily with the Spyder IDE that we also recommend.
-
+[^1]: All packages can also be installed using `pip install kineticstoolkit`. However, we recommend using Conda because it facilitates the management of virtual environments and integrates easily with the Spyder IDE that we also recommend.
 
 ## Step 2 - Install Python and selected scientific packages
 

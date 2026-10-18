@@ -25,7 +25,7 @@ The three main panes of the standard Spyder interface.
 
 ## Writing code in the console
 
-Section A of [](fig_spyder_interface) is the console. It executes one command at a time. It also shows the result of calculations. Try entering this simple calculation in the console:
+Section A of [](fig_spyder_interface) is the console. It executes one command at a time and prints the result of calculations. Try entering this simple calculation in the console:
 
 ```{code-cell} ipython3
 :tags: [remove-output]
@@ -46,7 +46,7 @@ You can also write multiple-line commands using CTRL+Enter. Both are executed, b
 3 + 4
 ```
 
-To print the result of every command, we explicitly use the `print` command:
+To print the result of every command, use the `print` command:
 
 ```{code-cell} ipython3
 print("Hello world")
@@ -55,15 +55,18 @@ print("This is my first program")
 
 ## Writing code in a script
 
-Section B of [](fig_spyder_interface) is the script editor. It is simply a text editor that allows you to save code as a `.py` text file, to execute it all together later. You can execute a script by clicking on the "Run File" button ([](fig_spyder_toolbar)).
-
-As an exercise, create a file that prints "Hello World", save it as `hello_world.py`, and run it using the "Run File" button. You should see the text "Hello World" appear in the console.
+Section B of [](fig_spyder_interface) is the script editor. It allows you to save code as a `.py` text file and to execute it all together later. You  execute a script by clicking on the "Run File" button ([](fig_spyder_toolbar)).
 
 ```{figure} fig_spyder_toolbar.png
 :label: fig_spyder_toolbar
 :width: 300px
 "Run file", "Run current cell", "Run current cell and advance".
 ```
+
+## 💪 Exercise 1
+
+Create a script that prints "Hello World", save it as `hello_world.py`, and run it using the "Run File" button, so that "Hello World" appears in the console.
+
 
 ## Code cell
 
@@ -88,7 +91,7 @@ You can also name cells by adding a title next to the separator:
 
 You can execute a cell by placing the cursor in that cell, then by clicking on the "Run current cell" or "Run current cell and advance" button ([](fig_spyder_toolbar)).
 
-## 💪 Exercise
+## 💪 Exercise 2
 
 Create a file named `exercise.py` that contains two cells. A first cell prints "Hello world", and a second cell prints "This is my first program". Run the cell of your choice using the toolbar icons.
 

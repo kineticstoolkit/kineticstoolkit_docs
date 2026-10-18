@@ -271,7 +271,7 @@ while i < 5:
 print("done")
 ```
 
-We see that as long as `i` was strictly lower than 5, the `while` instruction executed the code block. When `i` equaled 5, the `(i < 5)` condition evaluated to False, and therefore the `while` instruction stopped executing the code block.
+We see that as long as `i` was strictly lower than 5, the `while` instruction executed the code block. When `i` reached 5, the `(i < 5)` condition evaluated to False, and therefore the `while` instruction stopped executing the code block.
 
 In data processing, we often repeat the same code over a long series of values. Using `while` is one way to loop over multiple values, and we will see many others in section [](9_python_looping.md), after learning Python's most useful data containers which are the lists, tuples, and dictionaries.
 

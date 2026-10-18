@@ -292,7 +292,7 @@ print(f"Tenth step:  {calculate_step_length(y, 10): .2f} meters")
 
 
 :::{tip}
-Although in this example, we asked you to return 0.0 for invalid data, a better practice would be to return {{np_nan}}, which will be seen in section [](../4%20Manipulating%20Arrays/4_numpy_inf_nan.md).
+Although in this example, we asked you to return 0.0 for invalid data, a better practice would be to return {{np_nan}}, which will be seen in section [](../4%20Manipulating%20Arrays%20using%20Numpy/4_numpy_inf_nan.md).
 :::
 
 
@@ -308,7 +308,7 @@ list_of_lists = [
 ]
 ```
 
-As you can expect, nested lists are strongly related to matrices, which will be seen in section [](../4%20Manipulating%20Arrays/2_numpy_ndarray.md).
+As you can expect, nested lists are strongly related to matrices, which will be seen in section [](../4%20Manipulating%20Arrays%20using%20Numpy/2_numpy_ndarray.md).
 
 To access a specific element of a nested list, we start by indexing the outer list, then the inner list. For example, to access element 4 of `list_of_lists`, we first access the second inner of `list_of_list`:
 

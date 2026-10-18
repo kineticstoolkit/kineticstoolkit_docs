@@ -15,7 +15,7 @@ kernelspec:
 
 Programming always consists in dividing complex problems into simpler ones. To this end, all programming languages provide a way to group code into bundles named functions.
 
-A function is a subprogram that optionally takes some input, performs a given list of operations, and optionally returns the result as an output. The following sections will introduce how to define and document functions in Python.
+A function is a subprogram that optionally takes some input, performs a given list of operations, and optionally returns the result as an output. This section introduces how to create and document functions in Python.
 
 
 ## Function syntax
@@ -44,7 +44,6 @@ Here is an example of a function that prints its arguments' values and their sum
 
 ```{code-cell}
 def print_sum(arg1, arg2):
-    print("Hi!")
     print(f"The first variable is {arg1}.")
     print(f"The second variable is {arg2}.")
     print(f"The sum of both variables is {arg1 + arg2}.")
@@ -85,7 +84,6 @@ In this `print_sum` example above, we used `arg1` and `arg2` as argument names:
 
 ```python
 def print_sum(arg1, arg2):
-    print("Hi!")
     print(f"The first variable is {arg1}.")
     print(f"The second variable is {arg2}.")
     print(f"The sum of both variables is {arg1 + arg2}.")
@@ -95,7 +93,6 @@ Virtually any other name would work as well. For instance, we could use `first` 
 
 ```python
 def print_sum(first, second):
-    print("Hi!")
     print(f"The first variable is {first}.")
     print(f"The second variable is {second}.")
     print(f"The sum of both variables is {first + second}.")
@@ -143,7 +140,7 @@ print_info(1, "Catherina", "Smith", 20, 1.5, 50.2)
 
 ## Return values
 
-Most functions do not print results in the console; instead, they calculate something and output the result as a return value. This is done using the `return` statement. Although the following function is not useful, it illustrates how it works:
+Most functions do not print results in the console. Instead, they calculate something and output the result as a return value, using the `return` statement. Although the following function is not useful, it illustrates how it works:
 
 ```{code-cell}
 # Define a function
@@ -230,7 +227,7 @@ print(format_info(1, "Catherina", "Smith", 20, 1.5, 50.2))
 
 ## Docstrings
 
-Although the given solutions to the previous exercises do work, they could be much more documented. Keep in mind that code is written once, often by only one programmer, but it is read many times after, often by other people. An undocumented function is usually clear to the programmer while it is being written, but will it be months later, by other people?
+Keep in mind that code is written once, often by only one programmer, but it is read many times after, often by other people. It is therefore important to document the code. An undocumented function is usually clear to the programmer while they are writing it, but will it be months later, by other people?
 
 Docstrings are the most important way to document functions. A docstring is  a **string** that **doc**uments a function. While being optional, it is helpful in any code other than very simple scripts. A standard docstring is a tripled-quote string placed just below the function signature. Minimally, a docstring indicates:
 
@@ -301,7 +298,11 @@ help(format_info)
 
 ## Type annotations
 
-In addition to docstrings, type annotations (also called type hints) are an excellent way to document the types of a function's parameters and return value, because they are part of the function's signature instead of the docstring. They use `:` to document the expected types of the parameters, and `->` to document the type of the return value (see the `->` as a right-arrow):
+In addition to docstrings, type annotations (also called type hints) are an excellent way to document the types of a function's parameters and return value, because they are part of the function signature instead of the docstring. They use:
+- Columns `:` to document the expected types of the parameters;
+- An arrow `->` to document the type of the return value.
+
+In the example below, we removed the type annotations from the docstring: they now appear in the function signature:
 
 ```python
 def format_info(
@@ -338,7 +339,7 @@ def format_info(
     """
 ```
 
-For a function that returns nothing, we use `None` as the returned type, which is a special variable that means "Nothing":
+For a function with no return value, we use `None` as the returned type, which is a special variable that means "Nothing":
 
 ```python
 def save_list(filename: str, data: list[float]) -> None:
@@ -362,7 +363,7 @@ print_full_name("Catherina", "Smith")
 ```
 
 
-In Python, it is also possible to call functions using **keyword arguments**. To do so, we directly assign values to the argument names using `=` signs. This can make the code still clearer:
+In Python, we can also functions using **keyword arguments**. To do so, we directly assign values to the argument names using `=` signs. This can make the code still clearer:
 
 ```{code-cell} ipython3
 print_full_name(first_name="Catherina", last_name="Smith")
@@ -383,7 +384,7 @@ Signature of pandas.read_csv.
 ````
 
 
-It has an awful lot of arguments, most of them being optional. In this case, it makes no sense to remember their order: using keyword arguments is much preferred.
+It has an awful lot of arguments, most of them being optional. In this case, it makes no sense to remember their order, and using keyword arguments is much preferred.
 
 :::{tip}
 We can use both positional and keyword arguments in a same function call. We begin with the positional arguments, which are being assigned based on their order, and end with the keyword arguments:

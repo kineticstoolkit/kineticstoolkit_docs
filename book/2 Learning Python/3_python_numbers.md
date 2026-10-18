@@ -25,13 +25,13 @@ Numbers belong to different sets, each fulfilling a different role. Python provi
 The three sets of numbers in Python.
 ```
 
-This book focus only on integers and real numbers (floats).
+This book however focuses only on integers and real numbers (floats).
 
 
 ## Integers (`int`)
 
 
-Integers are generally used to represent ranks, indexes, counts:
+Integers are generally used to represent ranks, indexes and counts:
 
 - An index in a list (e.g, 5th value of a list)
 - A number of repetitions
@@ -40,7 +40,7 @@ Integers are generally used to represent ranks, indexes, counts:
 - The length of a list
 - etc.
 
-Any number that does not contain a decimal point is considered an `int` by Python:
+Any number that does not contain a decimal point is interpreted as an `int` by Python:
 
 ```{code-cell} ipython3
 some_int = 3
@@ -57,7 +57,7 @@ Floats are generally used to represent real, physical values:
 - An angle in radians
 - etc.
 
-Any number that contains a decimal point is considered a `float` by Python:
+Any number that contains a decimal point is interpreted as a `float` by Python:
 
 ```{code-cell} ipython3
 some_float = 3.0

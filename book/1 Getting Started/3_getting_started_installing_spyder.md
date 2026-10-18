@@ -1,6 +1,6 @@
 # Installing and configuring Spyder
 
-Spyder is a general-purpose programming environment for scientific applications, and it suits biomechanical data processing very well. Therefore, this is the programming environment that we recommend in this guide. Here is how to install and configure it to enhance your experience with interactive data processing.
+Spyder is a general-purpose programming environment for scientific applications, and it suits biomechanical data processing very well. Therefore, this is the programming environment that we recommend.
 
 ```{figure} fig_spyder_ide.jpg
 :label: fig_spyder_ide
@@ -16,7 +16,7 @@ Download and install Spyder from its website: https://www.spyder-ide.org
 
 ### Selecting your Python installation
 
-In section [](2_getting_started_installing.md), you created a `ktk` conda environment. You now need to configure Spyder to use this environment, as shown in [](fig_spyder_python_interpreter).
+In section [](2_getting_started_installing_python.md), you created a `ktk` conda environment. You now need to configure Spyder to use this environment, as shown in [](fig_spyder_python_interpreter).
 
 - Go to Spyder's preferences
 - Navigate to the **Python interpreter** item

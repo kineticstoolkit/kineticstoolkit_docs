@@ -1,6 +1,6 @@
 # Plotting a line graph
 
-The most common command of Matplotlib's pyplot module is probably {{plt_plot}}. This function plots one or many series expressed either as [standard Python lists](../2%20Learning%20Python/7_python_lists.md), as [NumPy Arrays](../4%20Manipulating%20Arrays/2_numpy_ndarray.md), or as `Pandas DataFrames`. For one-dimensional data, it takes one list (y) or two lists (x, y) as arguments.
+The most common command of Matplotlib's pyplot module is probably {{plt_plot}}. This function plots one or many series expressed either as [standard Python lists](../2%20Learning%20Python/7_python_lists.md), as [NumPy Arrays](../4%20Manipulating%20Arrays%20using%20Numpy/2_numpy_ndarray.md), or as `Pandas DataFrames`. For one-dimensional data, it takes one list (y) or two lists (x, y) as arguments.
 
 For example, to plot this list: `[1.0, 2.0, -1.0, -0.0]`:
 
@@ -19,7 +19,7 @@ plt.plot(y)
 A Matplotlib figure window.
 :::
 
-You should normally see the plot in a new window, as shown in {numref}`fig_matplotlib_qt5`. If, instead, you see the figure inline, or in Spyder's *Graph* pane, or not at all, then you probably did not configure Matplotlib for interactive graphics. See [](../../1%20Getting%20Started/3_getting_started_configuring_spyder.md).
+You should normally see the plot in a new window, as shown in {numref}`fig_matplotlib_qt5`. If, instead, you see the figure inline, or in Spyder's *Graph* pane, or not at all, then you probably did not configure Matplotlib for interactive graphics. See [](../1%20Getting%20Started/3_getting_started_installing_spyder.md).
 
 The different buttons on the figure allow some interaction with the plot:
 
