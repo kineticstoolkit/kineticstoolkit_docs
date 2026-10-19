@@ -13,55 +13,83 @@ kernelspec:
 
 # Modules and packages
 
-This section presents how to separate your code in modules, and how to import modules and packages to extend Python's functionality.
+This section presents how to separate your code in modules, and introduces how to use external packages to extend Python's functionality.
 
 
 ## Modules
 
-As your code grows, you may want to split your code into multiple files. For example, you may want to put the functions you use the most in a separate file and reuse this file from one script to another. Such separate file is called a module.
+As your code grows, you may want to split your code into multiple files. For example, you could put the functions you use the most in a separate file and reuse this file from one script to another. Such separate file is called a module.
 
-Let's create a file named `example_module.py` which contents is:
+Let's create a file named `example_module.py` in the current working directory. Its contents is:
 
 ```python
 # Contents of example_module.py
 
-def print_hello():
-    print("======")
-    print("Hello!")
-    print("======")
+def print_header(text):
+    """Print text underlined."""
+    separator = ""
+    for i in text:  # For each character of the text
+        separator += "-"  # Add a matching - character
+    print("")  # Skip a line
+    print(text)  # Print the text
+    print(separator)  # Print a separator
 ```
 
-If this script is saved in the current working folder, then you can load it and use it using the `import` command. Then you can use any function it defines by prefixing it with the module name and a dot:
+You can now load and use the `print_header` function in any script, using:
+
+
+```{code-cell} ipython3
+from example_module import print_header
+
+
+print_header("This is a header")
+print("This is some text")
+
+print_header("This is another header")
+print("This is some text")
+
+```
+
+To import the entire contents of the module instead of just a function, use:
 
 ```{code-cell} ipython3
 import example_module
 
-example_module.print_hello()
+
+example_module.print_header("This is a header")
+print("This is some text")
+
+example_module.print_header("This is another header")
+print("This is some text")
+
 ```
+
+Note that in this case, the module's contents is accessed via a prefix, which is the module name. This prefix is called a namespace, which is simply a way to group objects together, avoiding possible conflicts if two modules defined two objects with the same name.
 
 
 ## Packages
 
-Congratulation! At this point, you learned the most important elements of the Python programming language for human movement biomechanics. But you may feel that some elements are missing: how do I open a CSV file? How do I create a figure with graphical data? How to I perform trigonometric operations? etc.
+🎉 Congratulation! At this point, you learned the most important elements of the Python programming language for human movement biomechanics. 🎉
+
+But you may feel that some elements are missing:
+- How do I open a CSV file?
+- How do I create a figure with graphical data?
+- How to I perform trigonometric operations?
+- etc.
 
 Here come the packages. A package consists in one or many modules that have been programmed and shared by others to extend Python's functionality. Several thousands of packages are available for free via [PyPI](https://pipy.org) and [conda-forge](https://conda-forge.org). In this book, we introduce the most important ones: {{ matplotlib }}, {{ numpy }} and {{ pandas }} for any data processing, and {{ kineticstoolkit }} for human movement biomechanics. These packages should already be installed in your setup; if not, please refer to section [](../1%20Getting%20Started/2_getting_started_installing_python.md) to install them.
 
-You import a package exactly as you import a module. Here, we import the {{pyplot}} module of the {{matplotlib}} package:
+You import a package exactly as you import a module. Here is an example with the {{pyplot}} module of the {{matplotlib}} package:
 
 ```{code-cell} ipython3
 import matplotlib.pyplot
-```
 
-Once imported, we access the module's contents under the `matplotlib.pyplot` namespace:
 
-```{code-cell} ipython3
 matplotlib.pyplot.plot([0, 1, 4], "o-");
 ```
 
 
-## Namespaces and aliases
-
-A **namespace** is a name that groups different objects (functions, variables, classes). It is used to avoid ambiguities between two modules that could use identical names to define their respective objects. For instance, Python provides the function `max` that returns the maximum value between two floats. NumPy also provides a function `max` that returns the maximum value of an array. Namespaces avoid name clashes: Python's max is accessed using `max()`, while NumPy's max is accessed using `numpy.max()`.
+## Aliases
 
 To avoid typing `matplotlib.pyplot` each time we need a pyplot function, it is very common to import it using an **alias**:
 
