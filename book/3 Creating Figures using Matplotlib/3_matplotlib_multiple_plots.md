@@ -14,9 +14,12 @@ kernelspec:
 
 # Plotting multiple series
 
+In this section, you will learn to plot multiple series, either in the same figure, in different figures, or side by side.
+
+
 ## Plotting multiple series in a same figure
 
-Many series can be plotted on the same figure, simply by calling `plt.plot` multiple times:
+Many series can be plotted on the same figure, simply by calling {{plt_plot}} multiple times:
 
 ```{code-cell} ipython3
 import matplotlib.pyplot as plt
@@ -44,7 +47,7 @@ y2 = [1.0, 2.0, 3.0, 4.0, 5.0]
 
 plt.plot(x, y1)
 
-plt.figure()
+plt.figure()  # Create a new figure
 plt.plot(x, y2);
 ```
 
@@ -100,7 +103,7 @@ plt.plot(y5)
 plt.title("Fifth plot");
 ```
 
-We can see that the titles of the second line overlap with the horizontal axes of the first line. This is a common issue with Matplotlib: it does not know how to optimize the spacing while we progressively build the figure. Calling {{plt_tight_layout}} just after building the figure optimizes the spacing so that everything looks clean.
+We can see that the titles of the second line overlap with the horizontal axes of the first line. This is a common issue with Matplotlib: it does not know how to optimize the spacing while it progressively builds the figure. Calling {{plt_tight_layout}} just after building the figure optimizes the spacing so that everything looks clean.
 
 ```{code-cell} ipython3
 plt.subplot(2, 3, 1)

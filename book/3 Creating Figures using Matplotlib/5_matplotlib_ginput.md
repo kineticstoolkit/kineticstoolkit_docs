@@ -15,19 +15,18 @@ kernelspec:
 
 Matplotlib provides extensive options to interact with figures. One of the most helpful (and also the most basic) is {{plt_ginput}}. It lets the user click on a number of points on the figure, and then returns these coordinates. For instance, these instructions:
 
-```
+```python
 import matplotlib.pyplot as plt
 
 plt.plot([0.0, 1.0, -1.0, 2.0, 0.5, 0.0])
 points = plt.ginput(10)  # 10 points
 ```
 
-generate {numref}`fig_matplotlib_ginput` and let the user click a maximum of 10 points.
+generate [](#matplotlib_ginput) and let the user click a maximum of 10 points.
 
-```{figure}
-:label: fig_matplotlib_ginput
-:width: 5in
-![plt.ginput -width:wider](_static/images/fig_matplotlib_ginput.png)
+```{figure} matplotlib_ginput.png
+:label: matplotlib_ginput
+:width: 500px
 
 Clicking and retrieving coordinates using plt.ginput.
 ```
@@ -110,7 +109,7 @@ This force spike was deliberately generated as a synchronization signal, by gent
 
 Instead of reading it approximately on the curve, write this interactive function:
 
-```
+```python
 def get_spike_time(time: list[float], force: list[float]) -> float:
     """
     Interactively get spike time by asking a user to click on it.
@@ -135,11 +134,8 @@ def get_spike_time(time: list[float], force: list[float]) -> float:
     """
 ```
 
-#todo put solution elsewhere
-
-Solution:
-
-```
+::::{dropdown} Solution
+```python
 import matplotlib.pyplot as plt
 
 def get_spike_time(time, force):
@@ -147,3 +143,4 @@ def get_spike_time(time, force):
     points = plt.ginput(1)
     return points[0][0]  # Coordinate 0 (x) of point 0 (1st and only point)
 ```
+::::

@@ -13,13 +13,15 @@ kernelspec:
 
 # Styling plots
 
-## Title, axis labels, legend and grid
+In this section, you will learn how to add elements such as title and labels to a graph, how to use different line styles, colours and markers, and how to define the axes to zoom on a specified part of your data.
 
-We can add axis labels, a legend, a title and a grid using these functions:
+
+## Title, axis labels and grid
+
+You can add axis labels, a legend, a title and a grid using these functions:
 
 - {{plt_xlabel}} adds a label for the horizontal (x) axis;
 - {{plt_ylabel}} adds a label for the vertical (y) axis;
-- {{plt_legend}} adds a legend to identify the series;
 - {{plt_title}} adds a title to the graph;
 - {{plt_grid}} adds a grid to the background.
 
@@ -40,35 +42,34 @@ plt.plot(x, y2)
 plt.xlabel("Time (s)")
 plt.ylabel("Amplitude (m)")
 
-# Add a legend (labels are in the same order as they have been plotted)
-plt.legend(["Instrument 1", "Instrument 2"])
-
 # Add a title
-plt.title("Comparing a same measurement using two instruments")
+plt.title("Two random curves")
 
 # Add a grid
 plt.grid(True);
 ```
 
-:::{tip} Legend labels
-Another, less error-prone way to add legends is to define the labels at plot time. Instead of:
+## Legend
 
-```
-plt.plot(x, y1)
-plt.plot(x, y2)
-plt.legend(["Instrument 1", "Instrument 2"])
+Each time you plot a curve using {{plt_plot}}, you can set a label for it, and use that label in a legend using {{plt_legend}}. For example, using the same data as above:
+
+```{code-cell} ipython3
+# Plot the data
+plt.plot(x, y1, label="Force sensor")
+plt.plot(x, y2, label="Scale")
+
+# Add axis labels
+plt.xlabel("Time (s)")
+plt.ylabel("Force (N)")
+
+# Add a title
+plt.title("Comparing a same measurement using two instruments")
+
+# Add a legend
+plt.legend();
 ```
 
-we may do:
 
-```
-plt.plot(x, y1, label="Instrument 1")
-plt.plot(x, y2, label="Instrument 2")
-plt.legend()
-```
-
-Both methods give the same results, but in the the second one, the legend always matches what is displayed on the figure, even if we modified the number of `plt.plot` calls and forgot to update the `plt.legend` call accordingly.
-:::
 
 ## 💪 Exercise 1
 
@@ -83,8 +84,6 @@ Write a code that produces this figure:
 
 ```{code-cell} ipython3
 :tags: [remove-input]
-import matplotlib.pyplot as plt
-
 plt.plot(t, p)
 plt.title("Race profile of a sprinter")
 plt.xlabel("Time (s)")
@@ -92,8 +91,8 @@ plt.ylabel("Position (m)")
 plt.grid(True);
 ```
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell, remove-output]
 import matplotlib.pyplot as plt
 
 plt.plot(t, p)
@@ -102,7 +101,7 @@ plt.xlabel("Time (s)")
 plt.ylabel("Position (m)")
 plt.grid(True);
 ```
-
+::::
 
 ## 💪 Exercise 2
 
@@ -123,8 +122,6 @@ Write a code that produces this figure:
 
 ```{code-cell} ipython3
 :tags: [remove-input]
-import matplotlib.pyplot as plt
-
 plt.plot(t, p)
 plt.plot(timing_gates_time, [0, 25, 50, 75, 100])
 plt.title("Race profile of a sprinter")
@@ -134,8 +131,8 @@ plt.legend(["Video camera", "Timing gates"])
 plt.grid(True);
 ```
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell, remove-output]
 import matplotlib.pyplot as plt
 
 plt.plot(t, p)
@@ -146,7 +143,7 @@ plt.ylabel("Position (m)")
 plt.grid(True)
 plt.legend(["Video camera", "Timing gates"]);
 ```
-
+::::
 
 ## Markers, line style and colour
 
@@ -154,43 +151,41 @@ The optional, third argument `fmt` of the {{plt_plot}} function defines optional
 
 ### Marker
 
-- `.` dot
-- `o` round
-- `x` cross (x)
-- `+` cross (+)
-- `^` triangle
-- `d` diamond
-- `s` square
+|     |           |     |           |
+| ---:|:--------- | ---:|:--------- |
+| `.` | dot       | `o` | round     |
+| `x` | cross (x) | `+` | cross (+) |
+| `^` | triangle  | `d` | diamond   |
+| `s` | square    |     |           |
+|     |           |     |           |
 
 By default, no marker is plotted.
 
 ### Line style
 
-- `-` full line
-- `--` dashed line
-- `-.` dash-dotted line
-- `:` dotted line
+|      |                  |      |             | 
+| ----:|:---------------- | ----:|:----------- |
+|  `-` | full line        | `--` | dashed line |
+| `-.` | dash-dotted line |  `:` | dotted line |
+|      |                  |      |             | 
 
 Default is a full line, unless a marker has been set, in which case the default is no line.
 
 ### Colour
 
-- `r` red
-- `g` green
-- `b` blue
-- `c` cyan
-- `m` magenta
-- `y` dark yellow
-- `w` white
-- `k` black
+|     |         |     |             |
+| ---:|:------- | ---:|:----------- |
+| `r` | red     | `g` | green       |
+| `b` | blue    | `c` | cyan        |
+| `m` | magenta | `y` | dark yellow |
+| `w` | white   | `k` | black       |
+|     |         |     |             |
 
 Default is the next colour in the current colour cycle.
 
 Here are some examples:
 
 ```{code-cell} ipython3
-import matplotlib.pyplot as plt
-
 y = [0.0, 1.0, -1.0, 2.0, 0.5, 0.0]
 
 plt.subplot(2, 2, 1)
@@ -217,7 +212,7 @@ plt.tight_layout()
 
 ## Axes
 
-When we create a plot interactively, we can zoom on a particular section using the figure's Zoom and Pan buttons. It is also possible to zoom programmatically while we create the figure, using {{plt_axis}}.
+When we create a plot interactively, we can zoom on a particular section using the figure's Zoom and Pan buttons. It is also possible to zoom programmatically using {{plt_axis}}.
 
 
 ### Rectangular zoom
@@ -225,8 +220,6 @@ When we create a plot interactively, we can zoom on a particular section using t
 Let's create some random data:
 
 ```{code-cell}
-import matplotlib.pyplot as plt
-
 random_data = [
     0.60921838, 0.80049539, 0.11593785, 0.90703271, 0.75252107,
     0.72976933, 0.93364321, 0.14401492, 0.35255034, 0.68628490,
@@ -297,8 +290,6 @@ you generated the following figure:
 
 ```{code-cell} ipython3
 :tags: [remove-input]
-import matplotlib.pyplot as plt
-
 plt.plot(t, p)
 plt.plot(timing_gates_time, [0, 25, 50, 75, 100])
 plt.title("Race profile of a sprinter")
@@ -315,10 +306,8 @@ Generate the figure again, but this time with these specifications:
 - The video camera curve must be a solid black line with square markers.
 - The timing gates curve must be a dashed black line with round markers.
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell]
-import matplotlib.pyplot as plt
-
 plt.plot(t, p, "s-k")
 plt.plot(timing_gates_time, [0, 25, 50, 75, 100], "o--k")
 plt.title("Race profile of a sprinter")
@@ -327,4 +316,4 @@ plt.ylabel("Position (m)")
 plt.legend(["Video camera", "Timing gates"])
 plt.grid(True);
 ```
-
+::::
