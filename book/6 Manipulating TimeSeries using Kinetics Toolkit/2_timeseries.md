@@ -13,7 +13,7 @@ kernelspec:
 
 # The TimeSeries class
 
-In biomechanics, we often process data that is a function of time, e.g., electromyography, marker trajectories, force series, etc. When we analyze only a few data points and the sampling frequency is constant, using NumPy is usually sufficient. This is what we did in the last section in the different [NumPy exercises](../../3%20Part%20I%20-%20Learning%20Python%20for%20Biomechanics/4%20Manipulating%20Arrays%20using%20Numpy/numpy_exercises.md).
+In biomechanics, we often process data that is a function of time, e.g., electromyography, marker trajectories, force series, etc. When we analyze only a few data points and the sampling frequency is constant, using NumPy is usually sufficient.
 
 However, things can get more complicated when:
 - data are of different natures, such as marker trajectories, EMG, measured forces, calculated forces, etc.;
@@ -23,14 +23,14 @@ However, things can get more complicated when:
 - data are noisy;
 - etc.
 
-For these reasons, Kinetics Toolkit provides a new type of variable: the {{ktk_timeseries}}.
+For these reasons, KTK provides a new type of variable: the {{ktk_timeseries}}.
 
 A TimeSeries is a single container that hold time, data, events and general info.
 
 
 ## Time and data
 
-A TimeSeries in its simplest form contains a time attribute and some data. For example:
+A TimeSeries in its simplest form contains a time attribute and some data. The time attribute is a NumPy array, and the data attribute is a dictionary of NumPy arrays. For example:
 
 ```{code-cell} ipython3
 import kineticstoolkit.lab as ktk
@@ -47,7 +47,7 @@ ts.data["SquareRoot"] = np.sqrt(ts.time)  # Add yet another data series
 ts
 ```
 
-We can also add data to a TimeSeries using its {{ktk_timeseries_add_data}} method. This method checks that each data series has the same number of samples, whereas assigning it directly to `data` (as above) does not perform such verification.
+We can also add data to a TimeSeries using its {{ktk_timeseries_add_data}} method, which also checks that each data series has the same number of samples:
 
 ```{code-cell} ipython3
 ts = ktk.TimeSeries()                             # Create an empty TimeSeries
@@ -65,15 +65,18 @@ To see the TimeSeries data:
 ts.data
 ```
 
-TimeSeries can be plotted using their {{ktk_timeseries_plot}} method. We can also specify which of the series to plot.
+TimeSeries can be plotted using their {{ktk_timeseries_plot}} method. We can also specify which of the series to plot using its key or a list of keys.
 
 ```{code-cell} ipython3
+# Plot all
 plt.subplot(1, 3, 1)
 ts.plot()
 
+# Plot only ts.data["Cosinus"]
 plt.subplot(1, 3, 2)
 ts.plot("Cosinus")
 
+# Plot only ts.data["Sinus"] and ts.data["Cosinus"]
 plt.subplot(1, 3, 3)
 ts.plot(["Sinus", "Cosinus"])
 
@@ -151,7 +154,7 @@ By default, `info` includes the time unit:
 ts.info
 ```
 
-You may use the {{ktk_timeseries_add_info}}, {{ktk_timeseries_rename_info}} and {{ktk_timeseries_remove_info}} to manage `info`:
+Managing this attribute is usually done using {{ktk_timeseries_add_info}}, {{ktk_timeseries_rename_info}} and {{ktk_timeseries_remove_info}}.
 
 ```{code-cell} ipython3
 ts = ts.add_info("Forces", "Unit", "N")
@@ -160,7 +163,7 @@ ts = ts.add_info("Moments", "Unit", "Nm")
 ts.info
 ```
 
-Unless explicitly mentioned, metadata is not used for calculation and is strictly optional. "Unit" info is however used by {{ktk_timeseries_plot}} to plot the units:
+Unless explicitly mentioned, theses metadata are not used for calculation and are strictly optional. "Unit" info is however used by {{ktk_timeseries_plot}} to plot the units:
 
 ```{code-cell} ipython3
 ts.plot()
@@ -221,11 +224,8 @@ ts = ts.add_info("Position", "Unit", "m")
 ts.plot()
 ```
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell]
-
-import kineticstoolkit.lab as ktk
-
 # Create the TimeSeries
 ts = ktk.TimeSeries()
 
@@ -240,4 +240,4 @@ ts = ts.add_info("Position", "Unit", "m")
 
 ts.plot()
 ```
-
+::::

@@ -11,9 +11,11 @@ kernelspec:
   name: python3
 ---
 
-# Converting between variables and TimeSeries
+# Converting between different types and TimeSeries
 
-We now know how to create a TimeSeries from scratch. We can also create a TimeSeries from other variables or even from other TimeSeries.
+#todo To be continued
+
+You learned in the previous section how to create a TimeSeries from scratch. You can also create a TimeSeries based on other variables. Any [list](../2%20Learning%20Python/7_python_lists.md), [NumPy array](../4%20Manipulating%20Arrays%20using%20Numpy/2_numpy_ndarray.md), Pandas {{pd_series}}, Pandas {{pd_dataframe}} or another TimeSeries can be converted to a TimeSeries. This section showcases every conversion from and to other types.
 
 ```{code-cell} ipython3
 import kineticstoolkit.lab as ktk
@@ -21,7 +23,46 @@ import numpy as np
 import pandas as pd
 ```
 
-Any [list](../2%20Learning%20Python/7_python_lists.md), [NumPy array](../4%20Manipulating%20Arrays%20using%20Numpy/2_numpy_ndarray.md), Pandas {{pd_series}} or Pandas {{pd_dataframe}} can be converted to a TimeSeries.
+
+## Creating TimeSeries from...
+
+### Python list, Numpy array, Pandas Series
+
+These three instructions are equivalent. They all create a TimeSeries with one data key named "data", and a corresponding time with 1 sample per second.
+
+```{code-cell}
+ktk.TimeSeries([1, 2, 3, 4, 5])
+
+ktk.TimeSeries(
+    np.array(
+        [1, 2, 3, 4, 5]
+    )
+)
+
+ktk.TimeSeries(
+    pd.Series(
+        [1, 2, 3, 4, 5]
+    )
+)
+```
+
+
+## Numpy Array to TimeSeries
+
+```{code-cell}
+ktk.TimeSeries(
+    np.array(
+        [1, 2, 3, 4, 5]
+    )
+)
+```
+
+
+Conversely, we can use the NumPy array's {{np_tolist}} method to convert one of the TimeSeries data values to a list:
+
+```{code-cell}
+ts.data["data"].tolist()
+```
 
 
 ## Numpy Array ↔︎ TimeSeries
@@ -46,28 +87,6 @@ There is no need to convert back to an array, as the `data` attribute of the Tim
 ts.data["data"]
 ```
 
-
-## Python List ↔︎ TimeSeries
-
-To create a TimeSeries from a list:
-
-```{code-cell}
-example_list = [1, 2, 3, 4, 5]
-
-example_list
-```
-
-```{code-cell}
-ts = ktk.TimeSeries(example_list)
-
-ts
-```
-
-Conversely, we can use the NumPy array's {{np_tolist}} method to convert one of the TimeSeries data values to a list:
-
-```{code-cell}
-ts.data["data"].tolist()
-```
 
 
 ## Pandas Series ↔︎ TimeSeries

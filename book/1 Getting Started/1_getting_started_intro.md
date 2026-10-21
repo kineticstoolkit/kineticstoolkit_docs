@@ -9,7 +9,7 @@ Depending on your background, you may want to start your journey at different po
 
 **I know Python, NumPy, and Matplotlib, but I'm new to biomechanical analysis.**
 
-- Jump to [](../5%20Manipulating%20TimeSeries%20using%20Kinetics%20Toolkit/1_ktk_intro.md).
+- Jump to [](../6%20Manipulating%20TimeSeries%20using%20Kinetics%20Toolkit/1_ktk_intro.md).
 
 
 **I already do biomechanical analysis, but under Matlab instead of Python.**
@@ -18,10 +18,10 @@ Depending on your background, you may want to start your journey at different po
 - Then learn the Python syntax: [](../2%20Learning%20Python/1_python_intro.md);
 - You may skip Matplotlib as this is practically identical to Matlab.
 - However, be sure to go through NumPy as there are some fundamental differences between Matlab and NumPy: [](../4%20Manipulating%20Arrays%20using%20Numpy/1_numpy_intro.md)
-- Then, jump to [](../5%20Manipulating%20TimeSeries%20using%20Kinetics%20Toolkit/1_ktk_intro.md).
+- Then, jump to [](../6%20Manipulating%20TimeSeries%20using%20Kinetics%20Toolkit/1_ktk_intro.md).
 
 
 **I already do biomechanical analysis under Python.**
 
-- Start directly here: [](../5%20Manipulating%20TimeSeries%20using%20Kinetics%20Toolkit/1_ktk_intro.md).
+- Start directly here: [](../6%20Manipulating%20TimeSeries%20using%20Kinetics%20Toolkit/1_ktk_intro.md).
 - You may also consult the {{ktk_api_reference}}.

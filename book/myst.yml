@@ -96,6 +96,8 @@ project:
     pd_series: "[Series](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html)"
     pd_dataframe: "[DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)"
     pd_read_csv: "[pd.read_csv](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html)"
+    pd_read_excel: "[pd.read_excel](https://pandas.pydata.org/docs/reference/api/pandas.read_excel.html)"
+    pd_read_clipboard: "[pd.read_clipboard](https://pandas.pydata.org/docs/reference/api/pandas.read_clipboard.html)"
     dataframe_to_csv: "[to_csv](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html)"
     ezc3d: "[ezc3d](https://github.com/pyomeca/ezc3d)"  
     kineticstoolkit: "[Kinetics Toolkit](https://kineticstoolkit.uqam.ca)"
