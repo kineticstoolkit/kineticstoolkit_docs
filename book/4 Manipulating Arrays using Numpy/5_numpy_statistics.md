@@ -145,30 +145,26 @@ plt.legend(["Fx", "Fy", "Fz"])
 plt.show()
 ```
 
-1. Write one line of code that calculates the three mean forces $\overline{F_x}$, $\overline{F_y}$ and $\overline{F_z}$ as a unidimensional array of length 3.
-2. Write one line of code that calculates the series of resulting force ($F_\text{tot} = \sqrt{F_x^2 + F_y^2 + F_z^2}$).
-3. Write one line of code that calculates the mean resulting force $\overline{F_\text{tot}}$ as a float.
+1. Write one line of code that calculates the three mean components $\overline{F_x}$, $\overline{F_y}$ and $\overline{F_z}$ as a unidimensional array of length 3.
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell]
-
-# 1.
-print("== 1 ==")
-print(
-    np.mean(forces, axis=0),
-)
-
-# 2.
-print("== 2 ==")
-print(
-    np.sqrt(np.sum(forces**2, axis=1)),
-)
-
-# 3.
-print("== 3 ==")
-print(
-    np.mean(np.sqrt(np.sum(forces**2, axis=1)), axis=0),
-)
+np.mean(forces, axis=0)
 ```
+::::
 
-#todo Add sections on nanmean, nanmin, etc.
+2. Write one line of code that calculates the series of resulting (total) force $F_\text{tot} = \sqrt{F_x^2 + F_y^2 + F_z^2}$.
+
+::::{dropdown} Solution
+```{code-cell} ipython3
+np.sqrt(np.sum(forces**2, axis=1))
+```
+::::
+
+3. Write one line of code that calculates the mean resulting (total) force $\overline{F_\text{tot}}$ as one float.
+
+::::{dropdown} Solution
+```{code-cell} ipython3
+np.mean(np.sqrt(np.sum(forces**2, axis=1)), axis=0)
+```
+::::

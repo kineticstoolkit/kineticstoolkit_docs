@@ -37,9 +37,12 @@ Max shoulder flexion: [119.0, 124.0, 123.0]
 
 The number of measurements is unknown: your code must add elements to the list until the therapist presses Enter without entering a value.
 
-:::{tip}
-- You may want to see again [user input](4_python_strings.md), and [creating and adding data to lists](7_python_lists.md).
-- The `input` function returns an empty string `""` when the user presses Enter without entering a value.
+:::{dropdown} Tip 1
+You may want to see again [user input](4_python_strings.md), and [creating and adding data to lists](7_python_lists.md).
+:::
+
+:::{dropdown} Tip 2
+The `input` function returns an empty string `""` when the user presses Enter without entering a value.
 :::
 
 ::::{dropdown} Solution
@@ -138,7 +141,7 @@ y = [0.13, 0.72, 1.29, 1.93, 2.55, 3.12, 3.71, 4.34, 4.95, 5.56]
 
 Write a program that creates a list named `step_lengths` that contains the length of every step. The first step length should be `y[1] - y[0]`, the second should be `y[2] - y[1]`, and so on. In this specific example, we recorded nine steps, but your code should adapt for the length of `y` (e.g., if you recorded 15 heel strikes, your code should calculate 14 step lengths).
 
-:::{tip}
+:::{dropdown} Tip
 Remember that you can obtain the length of a list using the `len` keyword.
 :::
 

@@ -1,17 +1,3 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.14.4
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
----
-
-
 # Introduction to Matplotlib
 
 Matplotlib is a standard for producing high-quality and interactive figures. The pyplot module is highly similar to Matlab's plotting functions, and offers an easy-to-understand, yet very powerful way to produce figures.
@@ -41,3 +27,12 @@ Matplotlib can generate a wide variety of plots. Here are different examples tha
 This chapter focuses solely on line plots using {{ plt_plot }}.
 
 However, after learning this type of plot and [](../4%20Manipulating%20Arrays%20using%20Numpy/1_numpy_intro.md), any other type of plot will become relatively easy to draw just by reading their documentation.
+
+
+## Importing Matplotlib
+
+Matplotlib's `pyplot` module is very common and convenient, and is usually imported under the `plt` namespace:
+
+```python
+import matplotlib.pyplot as plt
+```

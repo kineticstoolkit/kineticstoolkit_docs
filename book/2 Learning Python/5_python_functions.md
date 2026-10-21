@@ -197,7 +197,7 @@ prints this:
     BMI: 22.31
     =============
 
-:::{tip}
+:::{dropdown} Tip
 You may want to read again section [](4_python_strings.md) for a refresher on how to include line breaks in strings and how to create long strings.
 :::
 

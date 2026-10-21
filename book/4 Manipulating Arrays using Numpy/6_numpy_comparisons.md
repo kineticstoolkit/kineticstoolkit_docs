@@ -14,9 +14,11 @@ kernelspec:
 
 # Comparisons and logical operators
 
+This section presents how to compare values between arrays.
+
 ## Comparison operators
 
-We can use comparison operators such as `>` or `==` to compare two arrays element-wise. In this case, the result is an array of booleans:
+Every comparison operators that we used in section [](../2%20Learning%20Python/6_python_conditions.md), such as `>` or `==`, also work on arrays. They compare items element-wise and result is an array of booleans:
 
 ```{code-cell} ipython3
 import numpy as np
@@ -56,7 +58,7 @@ a >= 5.0
 ```
 
 
-To find the indices of the array where the comparison returned true, we can use {{np_nonzero}}:
+To find the indices of the array where the comparison returned true, we use {{np_nonzero}}:
 
 ```{code-cell}
 a = np.array([1.0, 2.2, 10.4, 4.6, 5.8, 6.0, 1.2])
@@ -67,7 +69,7 @@ print("Indices where the result was True:", np.nonzero(a > 5))
 
 ## 💪 Exercise
 
-We recorded this series of vertical forces using a gait force platform:
+You recorded this series of vertical forces using a gait force platform:
 
 ```{code-cell} ipython3
 import numpy as np
@@ -93,14 +95,14 @@ plt.xlabel("# sample")
 plt.ylabel("Force (N)");
 ```
 
-We want to identify the weight support phase, defined as any sample where the force is higher than 100 newtons.
+You want to identify the weight support phase, defined as any sample where the force is higher than 100 newtons.
 
 - Write a one-line code that creates a NumPy array named `is_weight_support`, which has the same shape as `force` and that contains `True` during the weight support phase, and `False` otherwise.
 
 - Verify your code by plotting both `force` and `is_weight_support` on the same figure.
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell]
 import matplotlib.pyplot as plt
 
 # We create a mask to keep only the weight support phase
@@ -115,11 +117,12 @@ plt.legend();
 # is_weight_support to match the vertical scale of the force plot
 # so that the comparison is more visible on the figure.
 ```
+::::
 
 
 ## Logical operators
 
-We already learned Python's logical operators `not`, `or`, and `and`. Unfortunately, these operators work only on booleans, not on arrays of booleans. However, NumPy provides equivalent operators:
+In section [](../2%20Learning%20Python/6_python_conditions.md), you learned Python's logical operators `not`, `or`, and `and`. Unfortunately, these operators work only on booleans, and not on arrays of booleans. However, NumPy provides equivalent operators, which are showcased in [](#fig_numpy_boolean_operators).
 
 | Python's operator on `bool` | NumPy's equivalent operator for arrays of `bool` |
 |:---------------------------:|:------------------------------------------------:|
@@ -127,12 +130,8 @@ We already learned Python's logical operators `not`, `or`, and `and`. Unfortunat
 |            `or`             |                       `\|`                       |
 |            `and`            |                       `&`                        |
 
-{numref}`fig_numpy_boolean_operators` illustrates the behaviour of each operator.
-
-:::{figure}
+:::{figure} fig_numpy_boolean_operators.png
 :label: fig_numpy_boolean_operators
-![Logical operators on Python and Numpy](_static/images/fig_numpy_boolean_operators.png)
-
 Correspondence between logical operations on bool and ndarray.
 :::
 

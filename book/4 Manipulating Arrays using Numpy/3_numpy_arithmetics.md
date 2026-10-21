@@ -14,9 +14,11 @@ kernelspec:
 
 # Arithmetics and trigonometry
 
+This section shows how to perform mathematical operations on entire arrays.
+
 ## Arithmetics operators
 
-All Python arithmetic operators (`+`, `-`, `*`, `/`, `**`) work directly on NumPy arrays, assuming both arrays have the same shape. Operations are performed between corresponding elements of the same position. For example, using `a + b`, the 1st element of `a` is summed with the 1st element of `b`, the 2nd element of `a` with the 2nd of `b`, and so on:
+All Python arithmetic operators (`+`, `-`, `*`, `/`, `**`) work directly on two NumPy arrays, assuming both arrays have the same shape. Operations are performed between corresponding elements of the same position. For example, `a + b` sums the 1st element of `a` with the 1st element of `b`, the 2nd element of `a` with the 2nd of `b`, etc.:
 
 ```{code-cell} ipython3
 import numpy as np
@@ -36,45 +38,45 @@ b = np.array(
 )
 ```
 
-**Addition**:
+**Addition**
 
 ```{code-cell} ipython3
 a + b
 ```
 
-**Subtraction**:
+**Subtraction**
 
 ```{code-cell} ipython3
 a - b
 ```
 
-**Multiplication**:
+**Multiplication**
 
 ```{code-cell} ipython3
 a * b
 ```
 
-**Division**:
+**Division**
 
 ```{code-cell} ipython3
 a / b
 ```
 
-**Exponent**:
+**Exponent**
 
 ```{code-cell} ipython3
 a**b
 ```
 
-It is also possible to perform operations between an array and a single number.
+**Addition with one number**
 
-**Addition**:
+It is also possible to perform operations between an array and a single number.
 
 ```{code-cell} ipython3
 a + 1
 ```
 
-**Subtraction**:
+**Subtraction by one number**
 
 ```{code-cell} ipython3
 a - 1
@@ -85,22 +87,20 @@ and so on.
 
 ## 💪 Exercise 1
 
-A ball is released from a point in the air. Knowing that it was immobile when released, and that it gains negative speed at a rate of 9.81 m/s², plot its velocity as shown in {numref}`fig_falling_ball` for one second after release.
+A ball is released from a point in the air. Knowing that it was immobile when released, and that it gains negative speed at a rate of 9.81 m/s², plot its velocity as shown in [](#fig_falling_ball) release.
 
-```{figure}
+```{figure} fig_falling_ball.png
 :label: fig_falling_ball
-:width: 3in
-![](_static/images/fig_falling_ball.png)
-
+:width: 150px
 Vertical velocity of a falling ball.
 ```
 
-::::{tip}
+::::{dropdown} Tip
 Start by creating a time array using {{np_arange}} or {{np_linspace}}. Then, use this time array to create a velocity array. Finally, plot the velocity as a function of time.
 ::::
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell]
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -118,11 +118,11 @@ plt.ylabel("Velocity (m/s)")
 plt.grid(True)
 plt.show()
 ```
-
+::::
 
 ## Matrix multiplication
 
-NumPy provides the operator `@` to calculate the dot product. For instance, to calculate the dot product of two vectors:
+NumPy provides the `@` operator to calculate the dot product. For instance, to calculate the dot product of two vectors:
 
 $$
 \begin{bmatrix}
@@ -220,23 +220,23 @@ plt.plot(angle, np.sin(angle));
 
 ## 💪 Exercise 2
 
-A ball is thrown horizontally with a constant horizontal velocity of 10 m/s and with no initial vertical velocity at release. Once released, its horizontal velocity remains constant while its vertical velocity increases negatively at a rate of 9.81 m/s². Plot a curve of its total speed for one second after release. The total speed is the magnitude (norm) of the vector created by the horizontal velocity and the vertical velocity, as shown in {numref}`fig_falling_ball_horizontal`.
+A ball is thrown horizontally with a horizontal velocity of 10 m/s and with no initial vertical velocity at release. Once released, its horizontal velocity remains constant while its vertical velocity increases negatively at a rate of 9.81 m/s². Plot a curve of its total speed for one second after release. The total speed is the magnitude (norm) of the vector created by the horizontal velocity and the vertical velocity, as shown in {numref}`fig_falling_ball_horizontal`.
 
 :::{figure}
 :label: fig_falling_ball_horizontal
 :width: 3.5in
-![](_static/images/fig_falling_ball_horizontal.png)
+![](fig_falling_ball_horizontal.png)
 
 A falling ball with both horizontal and vertical velocity components.
 :::
 
 
-::::{tip}
-You already calculated the vertical velocity in [](numpy_arithmetics_exercise.md). Now use the Pythagorean theorem with arithmetic operations on arrays to calculate the total speed `v_total` based on `v_x` and `v_y`.
+::::{dropdown} Tip
+You already calculated the vertical velocity in the previous exercise. Now use the Pythagorean theorem with arithmetic operations on arrays to calculate the total speed `v_total` based on `v_x` and `v_y`.
 ::::
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell]
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -259,28 +259,27 @@ plt.ylabel("Total speed (m/s)")
 plt.grid()
 plt.show()
 ```
+::::
 
 
 ## 💪 Exercise 3
 
-When we walk on an inclined treadmill as in {numref}`fig_gait_inclined`, we must overcome a backward force that is equal to:
+When we walk on an inclined treadmill as in [](#fig_gait_inclined), we must overcome a backward force that is equal to:
 
 $$
 F = m g \sin \theta
 $$
 
-where $m$ is the person's mass, $g$ is 9.81 m/s² and $\theta$ is the treadmill angle. Write a function named `plot_force` that takes the mass as an argument and that plots $F$ for $\theta \in [-20, 20]$ degrees. Then, test your function for $m = 65$ kg.
+where $m$ is the person's mass, $g$ is 9.81 m/s² and $\theta$ is the treadmill angle. Write a function named `plot_force` that takes the mass as an argument and that plots $F$ as a function of $\theta$, for $\theta \in [-20, 20]$ degrees. Then, test your function for $m = 65$ kg.
 
-:::{figure}
+```{figure} fig_gait_inclined.png
 :label: fig_gait_inclined
-:width: 3.5in
-![](_static/images/fig_gait_inclined.png)
-
+:width: 300px
 Walking on an inclined surface.
-:::
+```
 
+::::{dropdown} Solution
 ```{code-cell} ipython3
-:tags: [hide-cell]
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -315,3 +314,4 @@ def plot_force(m: float) -> None:
 # Test the function
 plot_force(65)
 ```
+::::

@@ -273,7 +273,7 @@ plt.axis("square");
 ```
 
 
-## 💪 Exercise
+## 💪 Exercise 3
 
 In a previous exercise, using these data:
 

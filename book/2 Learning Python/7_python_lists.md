@@ -248,7 +248,7 @@ y = [0.13, 0.72, 1.29, 1.93, 2.55, 3.12, 3.71, 4.34, 4.95, 5.56]
 calculate_step_length(y, 9)
 ```
 
-**Question 1)** Explain why this call produces an IndexError.
+1. Explain why this call produces an IndexError.
 
 ::::{dropdown} Solution
 This happens because to calculate a step length, two consecutive heel strikes are needed. To calculate the length of step 9, heel strikes 9 and 10 are needed. However, the last element of `y` is at index 9.
@@ -256,7 +256,7 @@ This happens because to calculate a step length, two consecutive heel strikes ar
 One way to avoid this error is to check that the list will not be indexed out of its range, before calculating the step length.
 ::::
 
-**Question 2)** Modify your function so that instead of producing this error, it simply returns 0.
+2. Modify your function so that instead of producing this error, it simply returns 0.
 
 ::::{dropdown} Solution
 ```{code-cell} ipython3
