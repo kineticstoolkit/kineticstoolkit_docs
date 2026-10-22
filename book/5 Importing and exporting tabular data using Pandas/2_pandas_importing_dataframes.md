@@ -16,62 +16,42 @@ kernelspec:
 
 Pandas provides several ways to read data from different formats. Here, we show some of the most important.
 
-## Importing from other types
+## List/Array → DataFrame
 
-If the data is already available in Python, but is in another data type, there is a good chance that it can be converted to a DataFrame simply by using the {{pd_dataframe}} constructor.
-
-### Nested list → DataFrame
-
-To import a list of lists, with optional column names:
+To import any bidimensional array or equivalent list, with optional column names:
 
 ```{code-cell} ipython3
 import pandas as pd
 import numpy as np
 
 some_list = [
-    [1, 5, 9],
-    [2, 6, 10],
-    [3, 7, 11],
-    [4, 8, 12]
+    [920.6690625, 0.459204164],
+    [929.039714, 0.405744469],
+    [983.9531716, 0.426812137],
+    [927.0143403, 0.480908568],
+    [905.6627709, 0.435169206]
 ]
 
-pd.DataFrame(some_list, columns=["x", "y", "z"])
+pd.DataFrame(some_list, columns=["PeakForce", "StepLength"])
 ```
 
-### NumPy array → DataFrame
+## List of dictionaries → DataFrame
 
-Very similarly to nested lists, here is how to import a bidimensional arrays, with optional column names:
-
-```{code-cell} ipython3
-some_array = np.array(
-    [
-        [1, 5, 9],
-        [2, 6, 10],
-        [3, 7, 11],
-        [4, 8, 12]
-    ]
-)
-
-pd.DataFrame(some_array, columns=["x", "y", "z"])
-```
-
-
-### List of dictionaries → DataFrame
-
-From a list of dictionaries where each dictionary has similar keys (dictionary key become columns):
+From a list of dictionaries where each dictionary key becomes a column:
 
 ```{code-cell} ipython3
 some_list = [
-    {"x": 1, "y": 5, "z": 9},
-    {"x": 2, "y": 6, "z": 10},
-    {"x": 3, "y": 7, "z": 11},
-    {"x": 4, "y": 8, "z": 12},
+    {"PeakForce": 920.6690625, "StepLength": 0.459204164},
+    {"PeakForce": 929.0397140, "StepLength": 0.405744469},
+    {"PeakForce": 983.9531716, "StepLength": 0.426812137},
+    {"PeakForce": 927.0143403, "StepLength": 0.480908568},
+    {"PeakForce": 905.6627709, "StepLength": 0.435169206},
 ]
 
 pd.DataFrame(some_list)
 ```
 
-This import method is very practical because it allows constructing and expanding the dictionary list during data processing, and then converting easily to a DataFrame at the end. Here is an example data processing loop that showcases this concept:
+This import method has a very practical use case, which is constructing and expanding the list during data processing. Here is an example of code that could have constructed this list:
 
 ```{code-cell} ipython3
 :tags: [remove-input]
@@ -100,11 +80,9 @@ pd.DataFrame(results)
 ```
 
 
-## Importing from other software
+## CSV file → DataFrame
 
-Pandas as impressive list of functions that read files or even the clipboard, such as {{pd_read_csv}}, {{pd_read_excel}}, and {{pd_read_clipboard}}. Many others exist and can be found on {{pandas}}' website.
-
-### CSV file → DataFrame
+Pandas also has an impressive list of functions that read files or even the clipboard, such as {{pd_read_csv}}, {{pd_read_excel}}, and {{pd_read_clipboard}}. Many others exist and can be found on {{pandas}}' website.
 
 Suppose you have a CSV file with this contents:
 
@@ -120,15 +98,9 @@ You can import it directly using {{pd_read_csv}}:
 pd.read_csv("results.csv")
 ```
 
-In this case, we may want the Cycle column to specify the DataFrame index instead:
-
-```{code-cell} ipython3
-pd.read_csv("results.csv", index_col="Cycle")
-```
-
 Note that some csv files separate columns with other delimiters than commas (`,`) such as semicolons (`;`) or tabs (`\t`). This can be specified using the `delimiter` argument of []() {{pd_read_csv}}. There are many, many other options to this functions, such as skipping headers, defining alternate column names, etc.
 
-### Excel file → DataFrame
+## Excel file → DataFrame
 
 Similarly to CSV files, you can load an Excel file using {{pd_read_excel}}. 
 
@@ -146,14 +118,8 @@ You can import it directly using {{pd_read_excel}}:
 pd.read_excel("results.xlsx")
 ```
 
-You may want the Cycle column to specify the DataFrame index instead:
 
-```{code-cell} ipython3
-pd.read_excel("results.xlsx", index_col="Cycle")
-```
-
-
-### Clipboard → DataFrame
+## Clipboard → DataFrame
 
 Suppose you open the data of [](#fig_results_excel) in Excel or any other table editor.
 
@@ -166,15 +132,4 @@ pd.read_clipboard()
 ```{code-cell} ipython3
 :tags: [remove-input]
 pd.read_excel("results.xlsx")
-```
-
-You may want the Cycle column to specify the DataFrame index instead:
-
-```python
-pd.read_clipboard(index_col="Cycle")
-```
-
-```{code-cell} ipython3
-:tags: [remove-input]
-pd.read_excel("results.xlsx", index_col="Cycle")
 ```
