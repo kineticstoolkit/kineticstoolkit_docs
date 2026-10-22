@@ -112,7 +112,7 @@ Suppose you have the Excel file of [](#fig_results_excel).
 Some results in an Excel file
 ```
 
-You can import it directly using {{pd_read_excel}}:
+You can import it directly using {{pd_read_excel}} (you need to install the optional `openpyxl` package):
 
 ```{code-cell} ipython3
 pd.read_excel("results.xlsx")

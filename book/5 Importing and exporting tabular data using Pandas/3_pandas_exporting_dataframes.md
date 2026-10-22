@@ -65,7 +65,7 @@ df.to_clipboard()
 
 ## DataFrame → Markdown
 
-For publication in Markdown (requires the `tabulate` package):
+For publication in Markdown (you need to install the optional `tabulate` package):
 
 ```{code-cell} ipython3
 print(df.to_markdown())
