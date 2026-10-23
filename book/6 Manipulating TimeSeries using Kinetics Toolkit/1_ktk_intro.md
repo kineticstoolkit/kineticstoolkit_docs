@@ -13,9 +13,10 @@ kernelspec:
 
 # Introduction to Kinetics Toolkit (KTK)
 
-Although the combination of {{python}}, {{matplotlib}} and {{numpy}} is very powerful for data processing in general, many common operations in biomechanical analysis are still complex to realize using these barebone tools.
+Although the combination of Python, {{matplotlib}}, {{numpy}} and {{pandas}} is very powerful for data processing in general, many common operations in biomechanical analysis are still complex to realize using these barebone tools.
 
 Kinetics Toolkit (KTK) is a package that provides useful and targeted tools to biomechanics scientists, so that they do not need to program every common operation from scratch.
+
 
 ## Importing KTK
 

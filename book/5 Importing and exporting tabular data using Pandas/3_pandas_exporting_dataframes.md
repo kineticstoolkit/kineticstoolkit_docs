@@ -12,7 +12,7 @@ kernelspec:
 ---
 
 
-# Exporting DataFrames
+# Exporting a DataFrame
 
 Here are some of the most import methods to export a {{pd_dataframe}} to another type or to a file.
 

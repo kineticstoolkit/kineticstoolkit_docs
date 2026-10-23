@@ -12,7 +12,7 @@ kernelspec:
 ---
 
 
-# Importing DataFrames
+# Importing data as a DataFrame
 
 Pandas provides several ways to read data from different formats. Here, we show some of the most important.
 
@@ -33,6 +33,19 @@ some_list = [
 ]
 
 pd.DataFrame(some_list, columns=["PeakForce", "StepLength"])
+```
+
+## Dictionary of lists/arrays → DataFrame
+
+From a dictionary of lists/arrays where each dictionary key becomes a column:
+
+```{code-cell} ipython3
+some_dict = {
+    "PeakForce": [920.6690625, 929.039714 , 983.9531716, 927.0143403, 905.6627709],
+    "StepLength": [0.45920416, 0.40574447, 0.42681214, 0.48090857, 0.43516921],
+}
+
+pd.DataFrame(some_dict)
 ```
 
 ## List of dictionaries → DataFrame

@@ -92,7 +92,7 @@ ts_20Hz.plot([], ".-")
 ```
 
 :::{tip} Filtering before downsampling
-It is usually important to [filter](8_filters.md) a signal before downsampling it, to respect the [Nyquist–Shannon sampling theorem](https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem) and thus avoid aliasing.
+It is usually important to [filter](9_filters.md) a signal before downsampling it, to respect the [Nyquist–Shannon sampling theorem](https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem) and thus avoid aliasing.
 :::
 
 We use the same method to upsample a signal. Note that in this case, we may want to select the interpolation method since different interpolation methods may produce much different results. For example, if we upscale the `ts_20Hz` signal using different interpolation methods:

@@ -117,7 +117,7 @@ ts.plot()
 
 ## Events
 
-In the figure above, we see that the TimeSeries contains cyclic data. These cycles could be delimited using events. There are several ways to edit the events of a TimeSeries, which will be presented later in section [](6_timeseries_event_management.md). For now, we will add the events manually using {{ktk_timeseries_add_event}}:
+In the figure above, we see that the TimeSeries contains cyclic data. These cycles could be delimited using events. There are several ways to edit the events of a TimeSeries, which will be presented later in section [](7_timeseries_event_management.md). For now, we will add the events manually using {{ktk_timeseries_add_event}}:
 
 ```{code-cell} ipython3
 ts = ts.add_event(8.56, "push")
