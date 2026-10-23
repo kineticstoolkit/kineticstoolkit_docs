@@ -30,6 +30,10 @@ jobs:
         cd home
         export BASE_URL="/docs/home"
         myst build --execute --ci --html
+        sed -i.bak \
+          's|http://localhost:3000|https://kineticstoolkit.uqam.ca/docs/home|g' \
+          _build/html/sitemap.xml
+        rm -f _build/html/sitemap.xml.bak
         cd ..
     - name: Build api
       run: |
@@ -37,12 +41,21 @@ jobs:
         python create_symlink.py
         export PYTHONPATH="$PYTHONPATH:."
         ./build
+        sed -i.bak \
+          's|https://kineticstoolkit.uqam.ca/docs/apien|https://kineticstoolkit.uqam.ca/docs/api|g' \
+          _build/html/sitemap.xml
+        rm -f _build/html/sitemap.xml.bak
         cd ..
     - name: Build book
       run: |
         cd book
         export BASE_URL="/docs/book"
         myst build --execute --ci --html
+        sed -i.bak \
+          's|http://localhost:3000|https://kineticstoolkit.uqam.ca/docs/book|g' \
+          _build/html/sitemap.xml
+        rm -f _build/html/sitemap.xml.bak
+        cd ..
         cd ..
     - name: Deploy via scp
       env:
