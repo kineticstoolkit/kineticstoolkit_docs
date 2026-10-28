@@ -27,7 +27,6 @@ project:
       title: JOSS
   
 site:
-  url: https://kineticstoolkit.uqam.ca/home
   nav:
     - title: Home
       url: https://kineticstoolkit.uqam.ca/docs/home/

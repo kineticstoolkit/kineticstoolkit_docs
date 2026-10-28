@@ -1,0 +1,3 @@
+# PART I. LEARNING PYTHON FOR BIOMECHANICS
+
+#todo write something
