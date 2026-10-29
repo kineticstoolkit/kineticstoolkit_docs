@@ -1,3 +1,0 @@
-# Manipulating info
-
-#todo 

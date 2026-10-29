@@ -1,4 +1,4 @@
-# PART II. GOING FURTHER WITH KINETICS TOOLKIT
+# PART II. Going Further with Kinetics Toolkit
 
 Although the combination of Python, {{matplotlib}}, {{numpy}} and {{pandas}} is very powerful for data processing in general, many common operations in biomechanical analysis are still complex to realize using these barebone tools.
 

@@ -1,3 +1,3 @@
-# PART I. LEARNING PYTHON FOR BIOMECHANICS
+# PART I. Learning Python for Biomechanics
 
 #todo write something

@@ -201,32 +201,34 @@ project:
 
   toc:
     - file: index.md
+    - file: 0_introduction.md
+      children:
+      - pattern: "0_introduction/*.md"
     - file: part_i.md
-    - file: 1_getting_started.md
       children:
-      - pattern: "1_getting_started/*.md"
-    - file: 2_python.md
-      children:
-      - pattern: "2_python/*.md"
-    - file: 3_matplotlib.md
-      children:
-      - pattern: "3_matplotlib/*.md"
-    - file: 4_numpy.md
-      children:
-      - pattern: "4_numpy/*.md"
-    - file: 5_pandas.md
-      children:
-      - pattern: "5_pandas/*.md"
+      - file: 1_python.md
+        children:
+        - pattern: "1_python/*.md"
+      - file: 2_matplotlib.md
+        children:
+        - pattern: "2_matplotlib/*.md"
+      - file: 3_numpy.md
+        children:
+        - pattern: "3_numpy/*.md"
+      - file: 4_pandas.md
+        children:
+        - pattern: "4_pandas/*.md"
     - file: part_ii.md
-    - file: 6_timeseries.md
       children:
-      - pattern: "6_timeseries/*.md"
-    - file: 7_geometry.md
-      children:
-      - pattern: "7_geometry/*.md"
-    - file: 8_kinematics.md
-      children:
-      - pattern: "8_kinematics/*.md"
+      - file: 5_timeseries.md
+        children:
+        - pattern: "5_timeseries/*.md"
+      - file: 6_geometry.md
+        children:
+        - pattern: "6_geometry/*.md"
+      - file: 7_kinematics.md
+        children:
+        - pattern: "7_kinematics/*.md"
     - file: 10_appendix.md
       children:
       - pattern: "10_appendix/*.md"
